@@ -17,49 +17,28 @@
 - **서비스 네비게이션**: 각 하위 서비스로 연결되는 링크를 직관적인 UI로 제공합니다.
 - **다국어 및 테마 지원**: `locales.js`와 `style.css`를 통해 다국어와 다크/라이트 모드를 지원합니다.
 
-## 3. 배포 준비 및 절차 (Deployment Plan)
+## 3. 배포 절차 (Unified EC2 Deployment)
 
+**이 프로젝트는 루트 디렉토리의 통합 배포 스크립트를 통해 다른 모든 서비스와 함께 배포됩니다.**
+
+1.  **변경사항 커밋**: 로컬에서 수정한 내용을 Git에 커밋합니다.
+    ```bash
+    git add .
+    git commit -m "메인 페이지 업데이트 내용"
+    ```
+
+2.  **통합 배포 스크립트 실행**: 프로젝트 최상위 루트 디렉토리에서 다음 스크립트를 실행합니다.
+    ```bash
+    ./deploy_all_to_ec2.sh
+    ```
+
+3.  **자동 배포**: 스크립트가 `main` 프로젝트의 `frontend` 디렉터리를 EC2 서버의 `/var/www/hqmx/` 경로로 자동으로 동기화합니다.
+
+**⚠️ 중요**: 개별 배포는 더 이상 사용하지 않으며, 항상 통합 배포 스크립트를 사용해야 합니다.
+
+---
+(이하 내용은 참고용 레거시 정보)
+
+### 레거시 배포 절차 (Nginx 수동 배포)
 이 프로젝트는 정적 파일로 구성되어 있으므로, 웹 서버의 지정된 위치에 파일을 복사하는 것만으로 배포가 완료됩니다.
-
-1.  **서버 접속**:
-    ```bash
-    ssh -i "hqmx-ec2.pem" <user>@<ec2_ip_address>
-    ```
-
-2.  **배포 디렉토리 생성** (필요시):
-    Nginx 설정에 따라 메인 페이지를 서빙할 디렉토리를 준비합니다. (예: `/var/www/html/main`)
-    ```bash
-    sudo mkdir -p /var/www/html/main
-    ```
-
-3.  **파일 전송 (로컬 -> 서버)**:
-    `scp`를 사용하여 `frontend` 디렉토리의 모든 콘텐츠를 서버로 복사합니다. 불필요한 파일(`node_modules`, `.git` 등)은 제외합니다.
-    ```bash
-    # 'frontend/' 뒤의 슬래시가 중요합니다. 디렉토리 내용물만 복사합니다.
-    scp -i "hqmx-ec2.pem" -r frontend/* <user>@<ec2_ip_address>:/var/www/html/main/
-    ```
-
-4.  **Nginx 설정 확인**:
-    서버의 Nginx 설정 파일에서 `location /` 블록이 `/var/www/html/main` 디렉토리를 가리키도록 설정되었는지 확인합니다.
-
-    ```nginx
-    server {
-        listen 80;
-        server_name hqmx.net;
-
-        location / {
-            root /var/www/html/main;
-            index index.html;
-        }
-
-        # ... 기타 서비스 라우팅 설정 ...
-    }
-    ```
-
-5.  **Nginx 재시작**:
-    설정 변경 후 Nginx를 재시작하여 적용합니다.
-    ```bash
-    sudo systemctl reload nginx
-    ```
-
-이제 배포 준비가 완료되었습니다.
+...
