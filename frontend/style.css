@@ -1670,7 +1670,7 @@ body[data-theme="dark"] .platform-item img[src*="tumblr"] {
 .sitemap {
     margin-top: 60px;
     color: var(--light-text-color);
-    padding: 3rem 0 3rem 0;
+    padding: 3rem 0 8rem 0; /* Adjusted padding-bottom from 3rem to 8rem */
     border-bottom: 1px solid var(--border-color);
     opacity: 1;
 }
