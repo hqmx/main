@@ -167,8 +167,17 @@
 
         <section class="sitemap" style="margin-top: -4rem;">
             <div class="sitemap-content">
+                <!-- Title Section (Moved Above) -->
+                <div class="sitemap-center" style="margin-bottom: 3rem;">
+                    <div class="hqmx-slogan">
+                        <span class="slogan-text">High Quality Media X</span>
+                    </div>
+                    <h3 class="sitemap-title">Site Map</h3>
+                </div>
+
                 <div class="sitemap-bottom">
-                    <div class="sitemap-side sitemap-left">
+                    <!-- Converter -->
+                    <div class="sitemap-item">
                         <a href="https://hqmx.net" class="logo-link converter-link">
                             <div class="converter-logo">
                                 <span class="converter-text"><span class="converter-c">C</span><span
@@ -180,14 +189,8 @@
                         </button>
                     </div>
 
-                    <div class="sitemap-center">
-                        <div class="hqmx-slogan">
-                            <span class="slogan-text">High Quality Media X</span>
-                        </div>
-                        <h3 class="sitemap-title">Site Map</h3>
-                    </div>
-
-                    <div class="sitemap-side sitemap-right">
+                    <!-- Downloader -->
+                    <div class="sitemap-item">
                         <a href="https://downloader.hqmx.net" class="logo-link downloader-link">
                             <div class="downloader-logo">
                                 <span class="downloader-text"><span class="downloader-d">D</span><span
@@ -195,6 +198,32 @@
                             </div>
                         </a>
                         <button class="sitemap-expand-btn downloader-expand-btn" id="downloaderExpandBtn">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+
+                    <!-- Generator -->
+                    <div class="sitemap-item">
+                        <a href="https://generator.hqmx.net" class="logo-link generator-link">
+                            <div class="generator-logo">
+                                <span class="generator-text"><span class="generator-g">G</span><span
+                                        class="generator-rest">ENERATOR</span></span>
+                            </div>
+                        </a>
+                        <button class="sitemap-expand-btn generator-expand-btn" id="generatorExpandBtn">
+                            <i class="fas fa-plus"></i>
+                        </button>
+                    </div>
+
+                    <!-- Calculator -->
+                    <div class="sitemap-item">
+                        <a href="https://calculator.hqmx.net" class="logo-link calculator-link">
+                            <div class="calculator-logo">
+                                <span class="calculator-text"><span class="calculator-c">C</span><span
+                                        class="calculator-rest">ALCULATOR</span></span>
+                            </div>
+                        </a>
+                        <button class="sitemap-expand-btn calculator-expand-btn" id="calculatorExpandBtn">
                             <i class="fas fa-plus"></i>
                         </button>
                     </div>
@@ -267,6 +296,69 @@
                     <a href="https://downloader.hqmx.net/en/tumblr" class="platform-icon-link">
                         <button class="platform-icon-btn" data-platform="tumblr" title="Tumblr Downloader">
                             <img src="https://cdn.simpleicons.org/tumblr/36465D" alt="Tumblr">
+                        </button>
+                    </a>
+                </div>
+
+                <!-- Generator Icon Navigation -->
+                <div class="generator-icons-nav">
+                    <a href="https://hqmx.net/generator/qr-code" class="platform-icon-link">
+                        <button class="platform-icon-btn" data-tool="qr-code" title="QR Code Generator">
+                            <i class="fas fa-qrcode"></i>
+                        </button>
+                    </a>
+                    <a href="https://hqmx.net/generator/password" class="platform-icon-link">
+                        <button class="platform-icon-btn" data-tool="password" title="Password Generator">
+                            <i class="fas fa-key"></i>
+                        </button>
+                    </a>
+                    <a href="https://hqmx.net/generator/barcode" class="platform-icon-link">
+                        <button class="platform-icon-btn" data-tool="barcode" title="Barcode Generator">
+                            <i class="fas fa-barcode"></i>
+                        </button>
+                    </a>
+                    <a href="https://hqmx.net/generator/uuid" class="platform-icon-link">
+                        <button class="platform-icon-btn" data-tool="uuid" title="UUID Generator">
+                            <i class="fas fa-fingerprint"></i>
+                        </button>
+                    </a>
+                    <a href="https://hqmx.net/generator/hash" class="platform-icon-link">
+                        <button class="platform-icon-btn" data-tool="hash" title="Hash Generator">
+                            <i class="fas fa-hashtag"></i>
+                        </button>
+                    </a>
+                    <a href="https://hqmx.net/generator/lorem-ipsum" class="platform-icon-link">
+                        <button class="platform-icon-btn" data-tool="lorem-ipsum" title="Lorem Ipsum Generator">
+                            <i class="fas fa-paragraph"></i>
+                        </button>
+                    </a>
+                </div>
+
+                <!-- Calculator Icon Navigation -->
+                <div class="calculator-icons-nav">
+                    <a href="https://hqmx.net/calculator/finance/currency-converter" class="platform-icon-link">
+                        <button class="platform-icon-btn" data-tool="finance" title="Finance Calculators">
+                            <i class="fas fa-coins"></i>
+                        </button>
+                    </a>
+                    <a href="https://hqmx.net/calculator/health/bmi-calculator" class="platform-icon-link">
+                        <button class="platform-icon-btn" data-tool="health" title="Health Calculators">
+                            <i class="fas fa-heartbeat"></i>
+                        </button>
+                    </a>
+                    <a href="https://hqmx.net/calculator/date-time/age-calculator" class="platform-icon-link">
+                        <button class="platform-icon-btn" data-tool="date-time" title="Date & Time Calculators">
+                            <i class="fas fa-calendar-alt"></i>
+                        </button>
+                    </a>
+                    <a href="https://hqmx.net/calculator/general/percentage-calculator" class="platform-icon-link">
+                        <button class="platform-icon-btn" data-tool="general" title="General Calculators">
+                            <i class="fas fa-calculator"></i>
+                        </button>
+                    </a>
+                    <a href="https://hqmx.net/calculator/general/scientific-calculator" class="platform-icon-link">
+                        <button class="platform-icon-btn" data-tool="scientific" title="Scientific Calculator">
+                            <i class="fas fa-square-root-alt"></i>
                         </button>
                     </a>
                 </div>
@@ -2060,68 +2152,84 @@
 
     </div>
     <script>
-        // --- CONVERTER EXPAND FUNCTIONALITY ---
-        // --- CONVERTER EXPAND FUNCTIONALITY ---
+        // Elements
         const converterExpandBtn = document.getElementById('converterExpandBtn');
-        const converterLogoLink = document.querySelector('.sitemap-left .logo-link');
         const categoryIconsNav = document.querySelector('.category-icons-nav');
         const categoryIconBtns = document.querySelectorAll('.category-icon-btn');
         const supportedConversions = document.querySelector('.supported-conversions');
 
-        // Function to toggle category icons
+        const downloaderExpandBtn = document.getElementById('downloaderExpandBtn');
+        const platformIconsNav = document.querySelector('.platform-icons-nav');
+
+        const generatorExpandBtn = document.getElementById('generatorExpandBtn');
+        const generatorIconsNav = document.querySelector('.generator-icons-nav');
+
+        const calculatorExpandBtn = document.getElementById('calculatorExpandBtn');
+        const calculatorIconsNav = document.querySelector('.calculator-icons-nav');
+
+        // Helper to close all sections except the one specified
+        function closeAllSections(except) {
+            // Close Converter
+            if (except !== 'converter' && categoryIconsNav && categoryIconsNav.classList.contains('show')) {
+                categoryIconsNav.classList.remove('show');
+                if (converterExpandBtn) converterExpandBtn.classList.remove('expanded');
+                categoryIconBtns.forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.conversion-category').forEach(cat => {
+                    cat.classList.remove('active');
+                    cat.classList.remove('show-badges');
+                });
+                if (supportedConversions) supportedConversions.style.display = 'none';
+            }
+
+            // Close Downloader
+            if (except !== 'downloader' && platformIconsNav && platformIconsNav.classList.contains('show')) {
+                platformIconsNav.classList.remove('show');
+                if (downloaderExpandBtn) downloaderExpandBtn.classList.remove('expanded');
+            }
+
+            // Close Generator
+            if (except !== 'generator' && generatorIconsNav && generatorIconsNav.classList.contains('show')) {
+                generatorIconsNav.classList.remove('show');
+                if (generatorExpandBtn) generatorExpandBtn.classList.remove('expanded');
+            }
+
+            // Close Calculator
+            if (except !== 'calculator' && calculatorIconsNav && calculatorIconsNav.classList.contains('show')) {
+                calculatorIconsNav.classList.remove('show');
+                if (calculatorExpandBtn) calculatorExpandBtn.classList.remove('expanded');
+            }
+        }
+
+        // --- CONVERTER ---
         function toggleCategoryIcons() {
             if (categoryIconsNav) {
-                // Close DOWNLOADER panel if it's open (mutual exclusion)
-                const platformNav = document.querySelector('.platform-icons-nav');
-                const dlExpandBtn = document.getElementById('downloaderExpandBtn');
-                const platformBtns = document.querySelectorAll('.platform-icon-btn');
+                const isOpening = !categoryIconsNav.classList.contains('show');
+                closeAllSections('converter');
 
-                if (platformNav && platformNav.classList.contains('show')) {
-                    platformNav.classList.remove('show');
-                    if (dlExpandBtn) {
-                        dlExpandBtn.classList.remove('expanded');
-                    }
-                    platformBtns.forEach(btn => btn.classList.remove('active'));
-                }
+                if (isOpening) {
+                    categoryIconsNav.classList.add('show');
+                    if (converterExpandBtn) converterExpandBtn.classList.add('expanded');
 
-                categoryIconsNav.classList.toggle('show');
-                if (converterExpandBtn) {
-                    converterExpandBtn.classList.toggle('expanded');
-                }
+                    // Show supported conversions
+                    if (supportedConversions) supportedConversions.style.display = 'block';
 
-                // If hiding, also hide all categories
-                if (!categoryIconsNav.classList.contains('show')) {
-                    const allCategories = document.querySelectorAll('.conversion-category');
-                    allCategories.forEach(cat => {
+                    // Show default category (cross-category)
+                    const defaultCategory = document.querySelector('.conversion-category[data-category="cross-category"]');
+                    const defaultCategoryBtn = document.querySelector('.category-icon-btn[data-category="cross-category"]');
+                    if (defaultCategory) defaultCategory.classList.add('active');
+                    if (defaultCategoryBtn) defaultCategoryBtn.classList.add('active');
+                } else {
+                    categoryIconsNav.classList.remove('show');
+                    if (converterExpandBtn) converterExpandBtn.classList.remove('expanded');
+                    document.querySelectorAll('.conversion-category').forEach(cat => {
                         cat.classList.remove('active');
                         cat.classList.remove('show-badges');
                     });
-                    categoryIconBtns.forEach(btn => btn.classList.remove('active'));
-
-                    // Hide supported conversions when category icons are hidden
-                    if (supportedConversions) {
-                        supportedConversions.style.display = 'none';
-                    }
-                } else {
-                    // Show supported conversions when category icons are shown
-                    if (supportedConversions) {
-                        supportedConversions.style.display = 'block';
-                    }
-
-                    // Show default category (cross-category) when expanding
-                    const defaultCategory = document.querySelector('.conversion-category[data-category="cross-category"]');
-                    const defaultCategoryBtn = document.querySelector('.category-icon-btn[data-category="cross-category"]');
-                    if (defaultCategory && !defaultCategory.classList.contains('active')) {
-                        defaultCategory.classList.add('active');
-                    }
-                    if (defaultCategoryBtn && !defaultCategoryBtn.classList.contains('active')) {
-                        defaultCategoryBtn.classList.add('active');
-                    }
+                    if (supportedConversions) supportedConversions.style.display = 'none';
                 }
             }
         }
 
-        // Converter + button click
         if (converterExpandBtn) {
             converterExpandBtn.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -2130,93 +2238,53 @@
             });
         }
 
-        // Converter logo click - Removed (now just a link to hqmx.net)
-
-        // 카테고리 아이콘 버튼 클릭 시 배지 표시
+        // Category Icon Click (Converter Badges)
         categoryIconBtns.forEach(btn => {
             btn.addEventListener('click', () => {
                 const category = btn.dataset.category;
 
-                // Show category icons if not shown
+                // Ensure panel is open
                 if (!categoryIconsNav.classList.contains('show')) {
+                    closeAllSections('converter');
                     categoryIconsNav.classList.add('show');
-                    if (converterExpandBtn) {
-                        converterExpandBtn.classList.add('expanded');
-                    }
+                    if (converterExpandBtn) converterExpandBtn.classList.add('expanded');
                 }
 
-                // 모든 카테고리 아이콘 버튼에서 active 제거
+                // Update active state
                 categoryIconBtns.forEach(b => b.classList.remove('active'));
-                // 클릭한 버튼에 active 추가
                 btn.classList.add('active');
 
-                // 모든 카테고리에서 active와 show-badges 제거
-                const allCategories = document.querySelectorAll('.conversion-category');
-                allCategories.forEach(cat => {
+                // Show badges
+                document.querySelectorAll('.conversion-category').forEach(cat => {
                     cat.classList.remove('active');
                     cat.classList.remove('show-badges');
                 });
 
-                // 클릭한 카테고리를 active로 설정하고 배지 표시
                 const targetCategory = document.querySelector(`.conversion-category[data-category="${category}"]`);
                 if (targetCategory) {
                     targetCategory.classList.add('active');
                     targetCategory.classList.add('show-badges');
-
-                    // Show supported conversions section
-                    if (supportedConversions) {
-                        supportedConversions.style.display = 'block';
-                    }
+                    if (supportedConversions) supportedConversions.style.display = 'block';
                 }
             });
         });
 
-        // --- DOWNLOADER EXPAND FUNCTIONALITY ---
-        const downloaderExpandBtn = document.getElementById('downloaderExpandBtn');
-        const downloaderLogoLink = document.querySelector('.sitemap-right .logo-link');
-        const platformIconsNav = document.querySelector('.platform-icons-nav');
-        const platformIconBtns = document.querySelectorAll('.platform-icon-btn');
-
-        // Function to toggle platform icons
+        // --- DOWNLOADER ---
         function togglePlatformIcons() {
             if (platformIconsNav) {
-                // Close CONVERTER panel if it's open (mutual exclusion)
-                const categoryNav = document.querySelector('.category-icons-nav');
-                const convExpandBtn = document.getElementById('converterExpandBtn');
-                const categoryBtns = document.querySelectorAll('.category-icon-btn');
-                const supportedConv = document.querySelector('.supported-conversions');
+                const isOpening = !platformIconsNav.classList.contains('show');
+                closeAllSections('downloader');
 
-                if (categoryNav && categoryNav.classList.contains('show')) {
-                    categoryNav.classList.remove('show');
-                    if (convExpandBtn) {
-                        convExpandBtn.classList.remove('expanded');
-                    }
-                    categoryBtns.forEach(btn => btn.classList.remove('active'));
-
-                    // Also hide conversion categories and supported conversions
-                    const allCategories = document.querySelectorAll('.conversion-category');
-                    allCategories.forEach(cat => {
-                        cat.classList.remove('active');
-                        cat.classList.remove('show-badges');
-                    });
-                    if (supportedConv) {
-                        supportedConv.style.display = 'none';
-                    }
-                }
-
-                platformIconsNav.classList.toggle('show');
-                if (downloaderExpandBtn) {
-                    downloaderExpandBtn.classList.toggle('expanded');
-                }
-
-                // If hiding, remove active states
-                if (!platformIconsNav.classList.contains('show')) {
-                    platformIconBtns.forEach(btn => btn.classList.remove('active'));
+                if (isOpening) {
+                    platformIconsNav.classList.add('show');
+                    if (downloaderExpandBtn) downloaderExpandBtn.classList.add('expanded');
+                } else {
+                    platformIconsNav.classList.remove('show');
+                    if (downloaderExpandBtn) downloaderExpandBtn.classList.remove('expanded');
                 }
             }
         }
 
-        // Downloader + button click
         if (downloaderExpandBtn) {
             downloaderExpandBtn.addEventListener('click', (e) => {
                 e.preventDefault();
@@ -2225,21 +2293,58 @@
             });
         }
 
-        // Downloader logo click - Removed (now just a link to downloader.hqmx.net)
+        // --- GENERATOR ---
+        function toggleGeneratorIcons() {
+            if (generatorIconsNav) {
+                const isOpening = !generatorIconsNav.classList.contains('show');
+                closeAllSections('generator');
 
-        // Platform icon button click - handled by <a> tag href attributes
-        // Each platform button is wrapped in <a> tag with correct URL:
-        // - Instagram → https://instagram.hqmx.net
-        // - TikTok → https://tiktok.hqmx.net
-        // - Facebook → https://facebook.hqmx.net
-        // - Twitter → https://twitter.hqmx.net
-        // - etc.
-        // No JavaScript handler needed - browser handles navigation automatically
+                if (isOpening) {
+                    generatorIconsNav.classList.add('show');
+                    if (generatorExpandBtn) generatorExpandBtn.classList.add('expanded');
+                } else {
+                    generatorIconsNav.classList.remove('show');
+                    if (generatorExpandBtn) generatorExpandBtn.classList.remove('expanded');
+                }
+            }
+        }
+
+        if (generatorExpandBtn) {
+            generatorExpandBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                toggleGeneratorIcons();
+            });
+        }
+
+        // --- CALCULATOR ---
+        function toggleCalculatorIcons() {
+            if (calculatorIconsNav) {
+                const isOpening = !calculatorIconsNav.classList.contains('show');
+                closeAllSections('calculator');
+
+                if (isOpening) {
+                    calculatorIconsNav.classList.add('show');
+                    if (calculatorExpandBtn) calculatorExpandBtn.classList.add('expanded');
+                } else {
+                    calculatorIconsNav.classList.remove('show');
+                    if (calculatorExpandBtn) calculatorExpandBtn.classList.remove('expanded');
+                }
+            }
+        }
+
+        if (calculatorExpandBtn) {
+            calculatorExpandBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                toggleCalculatorIcons();
+            });
+        }
 
     </script>
 
     <script src="/locales.js"></script>
-    <script src="/sitemap.js"></script>
+
 
 </body>
 

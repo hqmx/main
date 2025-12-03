@@ -1,44 +1,27 @@
-# HQMX 메인 페이지 (Sitemap) 프로젝트
+## 4. 트러블슈팅 (Troubleshooting)
 
-**최종 업데이트**: 2025-11-25
-**작성자**: Gemini Agent
+### ✅ [RESOLVED] 사이트맵 페이지 스크립트 오류 (2025-12-03)
 
-## 1. 프로젝트 개요 (Project Overview)
+**증상:**
+- `main` 페이지(`hqmx.net`) 로드 시 `TypeError: Cannot read properties of null (reading 'style')` 오류가 발생하며, 스크립트가 제대로 작동하지 않음.
 
-이 프로젝트는 HQMX 서비스의 **메인 랜딩 페이지** 역할을 합니다. 사용자가 `hqmx.net`에 처음 접속했을 때 보게 되는 화면이며, 모든 하위 서비스(Downloader, Converter, Generator, Calculator)로 안내하는 **비주얼 사이트맵(Visual Sitemap)** 기능을 핵심으로 합니다.
+**원인:**
+- `main/frontend/script.js` 파일이 `downloader` 프로젝트의 스크립트와 통합되어 있었음.
+- `main` 페이지(`index.html`)에는 존재하지 않는 `downloader` 관련 DOM 요소(예: `urlInput`, `analyzeBtn` 등)를 스크립트가 참조하여 `null` 에러가 발생함.
+- `dom` 캐싱 객체에 다운로더 전용 요소들이 포함되어 있었고, 이 요소들에 대한 `null` 체크 없이 `style` 속성에 접근하려 시도.
 
-- **Git Repository**: `https://github.com/hqmx/main.git`
-- **주요 기술**: Vanilla HTML, CSS, JavaScript (정적 페이지)
-- **핵심 파일**: `frontend/index.html`
+**해결 과정:**
+1.  `main/frontend/script.js` 파일을 `main` 페이지의 기능(테마 토글, 언어 선택, 모바일 메뉴, 사이트맵 카드 확장/축소)에만 필요한 최소한의 코드로 재작성.
+2.  `downloader` 관련 로직(URL 분석, 다운로드 진행 상태, 고급 사용자 트래킹 등) 및 해당 DOM 요소 참조 모두 제거.
+3.  `main/frontend/index.html`에 존재하는 요소들만 `document.getElementById` 또는 `document.querySelector`로 참조하도록 변경하고, 필요한 곳에 `null` 체크 추가.
+4.  재작성된 `script.js`를 배포 스크립트를 통해 `main` 서비스에 배포.
 
-## 2. 주요 기능 (Key Features)
+**배포 내역:**
+```bash
+./deploy.sh main
+```
+**상태**: ✅ 완료 (2025-12-03)
 
-- **통합 랜딩 페이지**: HQMX 브랜드의 첫인상을 결정하는 메인 게이트웨이입니다.
-- **서비스 네비게이션**: 각 하위 서비스로 연결되는 링크를 직관적인 UI로 제공합니다.
-- **다국어 및 테마 지원**: `locales.js`와 `style.css`를 통해 다국어와 다크/라이트 모드를 지원합니다.
-
-## 3. 배포 절차 (Unified EC2 Deployment)
-
-**이 프로젝트는 루트 디렉토리의 통합 배포 스크립트를 통해 다른 모든 서비스와 함께 배포됩니다.**
-
-1.  **변경사항 커밋**: 로컬에서 수정한 내용을 Git에 커밋합니다.
-    ```bash
-    git add .
-    git commit -m "메인 페이지 업데이트 내용"
-    ```
-
-2.  **통합 배포 스크립트 실행**: 프로젝트 최상위 루트 디렉토리에서 다음 스크립트를 실행합니다.
-    ```bash
-    ./deploy_all_to_ec2.sh
-    ```
-
-3.  **자동 배포**: 스크립트가 `main` 프로젝트의 `frontend` 디렉터리를 EC2 서버의 `/var/www/hqmx/` 경로로 자동으로 동기화합니다.
-
-**⚠️ 중요**: 개별 배포는 더 이상 사용하지 않으며, 항상 통합 배포 스크립트를 사용해야 합니다.
-
----
-(이하 내용은 참고용 레거시 정보)
-
-### 레거시 배포 절차 (Nginx 수동 배포)
-이 프로젝트는 정적 파일로 구성되어 있으므로, 웹 서버의 지정된 위치에 파일을 복사하는 것만으로 배포가 완료됩니다.
-...
+**교훈 및 예방 조치:**
+- 각 서비스의 `frontend` 스크립트는 해당 페이지의 DOM 구조와 기능에만 맞도록 분리하여 관리해야 함.
+- 여러 페이지에서 공통으로 사용되는 스크립트가 아니라면, 페이지별로 독립적인 스크립트를 유지해야 불필요한 DOM 참조 오류를 방지할 수 있음.
