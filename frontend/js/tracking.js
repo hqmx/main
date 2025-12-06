@@ -34,17 +34,18 @@
 
         // Send to API (fire and forget)
         // Use navigator.sendBeacon if available for reliability during page unload
+        // Note: /api/track endpoint may not be configured - silently ignore failures
         if (navigator.sendBeacon) {
             const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
             navigator.sendBeacon(API_ENDPOINT, blob);
         } else {
-            // Fallback to fetch
+            // Fallback to fetch - silently ignore errors
             fetch(API_ENDPOINT, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(payload),
                 keepalive: true
-            }).catch(err => console.error('[Tracking] Failed to send metric:', err));
+            }).catch(() => { /* silently ignore */ });
         }
     };
 
