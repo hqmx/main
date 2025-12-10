@@ -9,7 +9,7 @@
     // Prevent duplicate initialization
     if (window.trackUsage) return;
 
-    const API_ENDPOINT = '/api/track';
+    const API_ENDPOINT = '/api/converter/api/track';
     const SESSION_ID = Math.random().toString(36).substring(2, 15);
 
     /**

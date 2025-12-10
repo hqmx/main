@@ -31,7 +31,7 @@
     <meta name="twitter:image" content="https://hqmx.net/app.png">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="/main/style.css?v=20251124_1">
+    <link rel="stylesheet" href="/webtools/style.css?v=20251207_0457">
 
     <!-- Naver site verification -->
     <meta name="naver-site-verification" content="ef3f16b6a0f16162d7bb504f3accb2767a1238b4" />
@@ -49,13 +49,13 @@
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/i18next-browser-languagedetector/6.1.4/i18nextBrowserLanguageDetector.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/i18next-http-backend/1.3.1/i18nextHttpBackend.min.js"></script>
-    <script src="/main/locales.js?v=20251125_1"></script> <!-- Custom translation file -->
+    <script src="/webtools/locales.js?v=20251125_1"></script> <!-- Custom translation file -->
 
-    <link rel="icon" type="image/png" href="/main/assets/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="/main/assets/favicon.svg" />
-    <link rel="shortcut icon" href="/main/assets/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/main/assets/apple-touch-icon.png" />
-    <link rel="manifest" href="/main/assets/site.webmanifest" />
+    <link rel="icon" type="image/png" href="/webtools/assets/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/webtools/assets/favicon.svg" />
+    <link rel="shortcut icon" href="/webtools/assets/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/webtools/assets/apple-touch-icon.png" />
+    <link rel="manifest" href="/webtools/assets/site.webmanifest" />
 
     <!-- Google AdSense REMOVED -->
 
@@ -127,7 +127,36 @@
         }, 900000); // 15 minutes = 15 * 60 * 1000 = 900,000ms
     </script>
 
-    <script src="/js/tracking.js"></script>
+    <!-- <script src="/js/tracking.js"></script> Disabled: 405 error -->
+    <!-- JSON-LD Structured Data for AI (LLM) Optimization -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "name": "HQMX",
+          "url": "https://hqmx.net/",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://hqmx.net/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          },
+          "description": "Free online tools suite: File Converter, Media Downloader, Generators, and Calculators."
+        },
+        {
+          "@type": "Organization",
+          "name": "HQMX",
+          "url": "https://hqmx.net",
+          "logo": "https://hqmx.net/app.png",
+          "sameAs": [
+            "https://twitter.com/hqmx_net",
+            "https://www.facebook.com/hqmx.net"
+          ]
+        }
+      ]
+    }
+    </script>
 </head>
 
 <body>
@@ -151,10 +180,10 @@
 
                     <!-- 데스크톱 메뉴 링크 -->
                     <div class="nav-menu">
-                        <a href="/main/" class="nav-link active" data-i18n-key="nav_home">Home</a>
-                        <a href="/main/terms.html" class="nav-link" data-i18n-key="nav_tos">Terms</a>
-                        <a href="/main/privacy.html" class="nav-link" data-i18n-key="nav_privacy">Privacy</a>
-                        <a href="/main/api.html" class="nav-link" data-i18n-key="nav_api">API</a>
+                        <a href="/webtools.html" class="nav-link active" data-i18n-key="nav_home">Home</a>
+                        <a href="/webtools/terms.html" class="nav-link" data-i18n-key="nav_tos">Terms</a>
+                        <a href="/webtools/privacy.html" class="nav-link" data-i18n-key="nav_privacy">Privacy</a>
+                        <a href="/webtools/api.html" class="nav-link" data-i18n-key="nav_api">API</a>
                     </div>
 
                     <!-- 모바일 메뉴 오버레이 -->
@@ -163,11 +192,11 @@
 
                             <!-- 모바일 메뉴 페이지 링크 -->
                             <div class="mobile-menu-links">
-                                <a href="/main/" class="mobile-menu-link" data-i18n-key="nav_home">Home</a>
-                                <a href="/main/terms.html" class="mobile-menu-link" data-i18n-key="nav_tos">Terms</a>
-                                <a href="/main/privacy.html" class="mobile-menu-link"
+                                <a href="/webtools.html" class="mobile-menu-link" data-i18n-key="nav_home">Home</a>
+                                <a href="/webtools/terms.html" class="mobile-menu-link" data-i18n-key="nav_tos">Terms</a>
+                                <a href="/webtools/privacy.html" class="mobile-menu-link"
                                     data-i18n-key="nav_privacy">Privacy</a>
-                                <a href="/main/api.html" class="mobile-menu-link" data-i18n-key="nav_api">API</a>
+                                <a href="/webtools/api.html" class="mobile-menu-link" data-i18n-key="nav_api">API</a>
                             </div>
 
                             <div class="mobile-menu-controls">
@@ -309,23 +338,34 @@
                 <div class="category-icons-nav">
                     <button class="category-icon-btn" data-category="cross-category" title="Cross-Category Conversions">
                         <i class="fas fa-fire"></i>
+                        <span class="category-label">Cross</span>
                     </button>
                     <button class="category-icon-btn" data-category="video" title="Video Conversions">
                         <i class="fas fa-video"></i>
+                        <span class="category-label">Video</span>
                     </button>
                     <button class="category-icon-btn" data-category="image" title="Image Conversions">
                         <i class="fas fa-image"></i>
+                        <span class="category-label">Image</span>
                     </button>
                     <button class="category-icon-btn" data-category="audio" title="Audio Conversions">
                         <i class="fas fa-music"></i>
+                        <span class="category-label">Audio</span>
                     </button>
                     <button class="category-icon-btn" data-category="document" title="Document Conversions">
                         <i class="fas fa-file-alt"></i>
+                        <span class="category-label">Docs</span>
                     </button>
                     <button class="category-icon-btn" data-category="archive" title="Archive Conversions">
                         <i class="fas fa-file-archive"></i>
+                        <span class="category-label">Archive</span>
+                    </button>
+                    <button class="category-icon-btn" data-category="subtitle" title="Subtitle Conversions">
+                        <i class="fas fa-closed-captioning"></i>
+                        <span class="category-label">Subtitle</span>
                     </button>
                 </div>
+
 
                 <!-- Platform Icon Navigation (for Downloader) -->
                 <div class="platform-icons-nav">
@@ -2228,6 +2268,248 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- SUBTITLE CONVERSIONS -->
+                    <div class="conversion-category" data-category="subtitle">
+                        <div class="conversion-badges-container">
+                            <div class="conversion-badges">
+                                <!-- SRT Conversions -->
+                                <a href="/converter/srt-to-vtt" class="conversion-badge">
+                                    <span class="badge-front">SRT-VTT</span>
+                                    <span class="badge-back">VTT-SRT</span>
+                                </a>
+                                <a href="/converter/srt-to-smi" class="conversion-badge">
+                                    <span class="badge-front">SRT-SMI</span>
+                                    <span class="badge-back">SMI-SRT</span>
+                                </a>
+                                <a href="/converter/srt-to-sbv" class="conversion-badge">
+                                    <span class="badge-front">SRT-SBV</span>
+                                    <span class="badge-back">SBV-SRT</span>
+                                </a>
+                                <a href="/converter/srt-to-ttml" class="conversion-badge">
+                                    <span class="badge-front">SRT-TTML</span>
+                                    <span class="badge-back">TTML-SRT</span>
+                                </a>
+                                <a href="/converter/srt-to-csv" class="conversion-badge">
+                                    <span class="badge-front">SRT-CSV</span>
+                                    <span class="badge-back">CSV-SRT</span>
+                                </a>
+                                <a href="/converter/srt-to-tsv" class="conversion-badge">
+                                    <span class="badge-front">SRT-TSV</span>
+                                    <span class="badge-back">TSV-SRT</span>
+                                </a>
+                                <!-- VTT Conversions -->
+                                <a href="/converter/vtt-to-smi" class="conversion-badge">
+                                    <span class="badge-front">VTT-SMI</span>
+                                    <span class="badge-back">SMI-VTT</span>
+                                </a>
+                                <a href="/converter/vtt-to-sbv" class="conversion-badge">
+                                    <span class="badge-front">VTT-SBV</span>
+                                    <span class="badge-back">SBV-VTT</span>
+                                </a>
+                                <a href="/converter/vtt-to-ttml" class="conversion-badge">
+                                    <span class="badge-front">VTT-TTML</span>
+                                    <span class="badge-back">TTML-VTT</span>
+                                </a>
+                                <a href="/converter/vtt-to-csv" class="conversion-badge">
+                                    <span class="badge-front">VTT-CSV</span>
+                                    <span class="badge-back">CSV-VTT</span>
+                                </a>
+                                <a href="/converter/vtt-to-tsv" class="conversion-badge">
+                                    <span class="badge-front">VTT-TSV</span>
+                                    <span class="badge-back">TSV-VTT</span>
+                                </a>
+                                <!-- SMI Conversions -->
+                                <a href="/converter/smi-to-srt" class="conversion-badge">
+                                    <span class="badge-front">SMI-SRT</span>
+                                    <span class="badge-back">SRT-SMI</span>
+                                </a>
+                                <a href="/converter/smi-to-vtt" class="conversion-badge">
+                                    <span class="badge-front">SMI-VTT</span>
+                                    <span class="badge-back">VTT-SMI</span>
+                                </a>
+                                <a href="/converter/smi-to-sbv" class="conversion-badge">
+                                    <span class="badge-front">SMI-SBV</span>
+                                    <span class="badge-back">SBV-SMI</span>
+                                </a>
+                                <a href="/converter/smi-to-ttml" class="conversion-badge">
+                                    <span class="badge-front">SMI-TTML</span>
+                                    <span class="badge-back">TTML-SMI</span>
+                                </a>
+                                <a href="/converter/smi-to-csv" class="conversion-badge">
+                                    <span class="badge-front">SMI-CSV</span>
+                                    <span class="badge-back">CSV-SMI</span>
+                                </a>
+                                <a href="/converter/smi-to-tsv" class="conversion-badge">
+                                    <span class="badge-front">SMI-TSV</span>
+                                    <span class="badge-back">TSV-SMI</span>
+                                </a>
+                                <!-- SBV Conversions -->
+                                <a href="/converter/sbv-to-srt" class="conversion-badge">
+                                    <span class="badge-front">SBV-SRT</span>
+                                    <span class="badge-back">SRT-SBV</span>
+                                </a>
+                                <a href="/converter/sbv-to-vtt" class="conversion-badge">
+                                    <span class="badge-front">SBV-VTT</span>
+                                    <span class="badge-back">VTT-SBV</span>
+                                </a>
+                                <a href="/converter/sbv-to-smi" class="conversion-badge">
+                                    <span class="badge-front">SBV-SMI</span>
+                                    <span class="badge-back">SMI-SBV</span>
+                                </a>
+                                <a href="/converter/sbv-to-ttml" class="conversion-badge">
+                                    <span class="badge-front">SBV-TTML</span>
+                                    <span class="badge-back">TTML-SBV</span>
+                                </a>
+                                <a href="/converter/sbv-to-csv" class="conversion-badge">
+                                    <span class="badge-front">SBV-CSV</span>
+                                    <span class="badge-back">CSV-SBV</span>
+                                </a>
+                                <a href="/converter/sbv-to-tsv" class="conversion-badge">
+                                    <span class="badge-front">SBV-TSV</span>
+                                    <span class="badge-back">TSV-SBV</span>
+                                </a>
+                                <!-- TTML Conversions -->
+                                <a href="/converter/ttml-to-srt" class="conversion-badge">
+                                    <span class="badge-front">TTML-SRT</span>
+                                    <span class="badge-back">SRT-TTML</span>
+                                </a>
+                                <a href="/converter/ttml-to-vtt" class="conversion-badge">
+                                    <span class="badge-front">TTML-VTT</span>
+                                    <span class="badge-back">VTT-TTML</span>
+                                </a>
+                                <a href="/converter/ttml-to-smi" class="conversion-badge">
+                                    <span class="badge-front">TTML-SMI</span>
+                                    <span class="badge-back">SMI-TTML</span>
+                                </a>
+                                <a href="/converter/ttml-to-sbv" class="conversion-badge">
+                                    <span class="badge-front">TTML-SBV</span>
+                                    <span class="badge-back">SBV-TTML</span>
+                                </a>
+                                <a href="/converter/ttml-to-csv" class="conversion-badge">
+                                    <span class="badge-front">TTML-CSV</span>
+                                    <span class="badge-back">CSV-TTML</span>
+                                </a>
+                                <a href="/converter/ttml-to-tsv" class="conversion-badge">
+                                    <span class="badge-front">TTML-TSV</span>
+                                    <span class="badge-back">TSV-TTML</span>
+                                </a>
+                                <!-- FCPXML Conversions (Input only - output to SRT, VTT, SMI, SBV, TTML) -->
+                                <a href="/converter/fcpxml-to-srt" class="conversion-badge">
+                                    <span class="badge-front">FCPXML-SRT</span>
+                                    <span class="badge-back">FCPXML-SRT</span>
+                                </a>
+                                <a href="/converter/fcpxml-to-vtt" class="conversion-badge">
+                                    <span class="badge-front">FCPXML-VTT</span>
+                                    <span class="badge-back">FCPXML-VTT</span>
+                                </a>
+                                <a href="/converter/fcpxml-to-smi" class="conversion-badge">
+                                    <span class="badge-front">FCPXML-SMI</span>
+                                    <span class="badge-back">FCPXML-SMI</span>
+                                </a>
+                                <a href="/converter/fcpxml-to-sbv" class="conversion-badge">
+                                    <span class="badge-front">FCPXML-SBV</span>
+                                    <span class="badge-back">FCPXML-SBV</span>
+                                </a>
+                                <a href="/converter/fcpxml-to-ttml" class="conversion-badge">
+                                    <span class="badge-front">FCPXML-TTML</span>
+                                    <span class="badge-back">FCPXML-TTML</span>
+                                </a>
+                                <!-- DFXP Conversions (Input only - DFXP uses same parser as TTML) -->
+                                <a href="/converter/dfxp-to-srt" class="conversion-badge">
+                                    <span class="badge-front">DFXP-SRT</span>
+                                    <span class="badge-back">DFXP-SRT</span>
+                                </a>
+                                <a href="/converter/dfxp-to-vtt" class="conversion-badge">
+                                    <span class="badge-front">DFXP-VTT</span>
+                                    <span class="badge-back">DFXP-VTT</span>
+                                </a>
+                                <a href="/converter/dfxp-to-smi" class="conversion-badge">
+                                    <span class="badge-front">DFXP-SMI</span>
+                                    <span class="badge-back">DFXP-SMI</span>
+                                </a>
+                                <a href="/converter/dfxp-to-sbv" class="conversion-badge">
+                                    <span class="badge-front">DFXP-SBV</span>
+                                    <span class="badge-back">DFXP-SBV</span>
+                                </a>
+                                <a href="/converter/dfxp-to-ttml" class="conversion-badge">
+                                    <span class="badge-front">DFXP-TTML</span>
+                                    <span class="badge-back">DFXP-TTML</span>
+                                </a>
+                                <!-- ITT Conversions (Input only - ITT uses same parser as TTML) -->
+                                <a href="/converter/itt-to-srt" class="conversion-badge">
+                                    <span class="badge-front">ITT-SRT</span>
+                                    <span class="badge-back">ITT-SRT</span>
+                                </a>
+                                <a href="/converter/itt-to-vtt" class="conversion-badge">
+                                    <span class="badge-front">ITT-VTT</span>
+                                    <span class="badge-back">ITT-VTT</span>
+                                </a>
+                                <a href="/converter/itt-to-smi" class="conversion-badge">
+                                    <span class="badge-front">ITT-SMI</span>
+                                    <span class="badge-back">ITT-SMI</span>
+                                </a>
+                                <a href="/converter/itt-to-sbv" class="conversion-badge">
+                                    <span class="badge-front">ITT-SBV</span>
+                                    <span class="badge-back">ITT-SBV</span>
+                                </a>
+                                <a href="/converter/itt-to-ttml" class="conversion-badge">
+                                    <span class="badge-front">ITT-TTML</span>
+                                    <span class="badge-back">ITT-TTML</span>
+                                </a>
+                                <!-- CSV Conversions -->
+                                <a href="/converter/csv-to-srt" class="conversion-badge">
+                                    <span class="badge-front">CSV-SRT</span>
+                                    <span class="badge-back">SRT-CSV</span>
+                                </a>
+                                <a href="/converter/csv-to-vtt" class="conversion-badge">
+                                    <span class="badge-front">CSV-VTT</span>
+                                    <span class="badge-back">VTT-CSV</span>
+                                </a>
+                                <a href="/converter/csv-to-smi" class="conversion-badge">
+                                    <span class="badge-front">CSV-SMI</span>
+                                    <span class="badge-back">SMI-CSV</span>
+                                </a>
+                                <a href="/converter/csv-to-sbv" class="conversion-badge">
+                                    <span class="badge-front">CSV-SBV</span>
+                                    <span class="badge-back">SBV-CSV</span>
+                                </a>
+                                <a href="/converter/csv-to-ttml" class="conversion-badge">
+                                    <span class="badge-front">CSV-TTML</span>
+                                    <span class="badge-back">TTML-CSV</span>
+                                </a>
+                                <a href="/converter/csv-to-tsv" class="conversion-badge">
+                                    <span class="badge-front">CSV-TSV</span>
+                                    <span class="badge-back">TSV-CSV</span>
+                                </a>
+                                <!-- TSV Conversions -->
+                                <a href="/converter/tsv-to-srt" class="conversion-badge">
+                                    <span class="badge-front">TSV-SRT</span>
+                                    <span class="badge-back">SRT-TSV</span>
+                                </a>
+                                <a href="/converter/tsv-to-vtt" class="conversion-badge">
+                                    <span class="badge-front">TSV-VTT</span>
+                                    <span class="badge-back">VTT-TSV</span>
+                                </a>
+                                <a href="/converter/tsv-to-smi" class="conversion-badge">
+                                    <span class="badge-front">TSV-SMI</span>
+                                    <span class="badge-back">SMI-TSV</span>
+                                </a>
+                                <a href="/converter/tsv-to-sbv" class="conversion-badge">
+                                    <span class="badge-front">TSV-SBV</span>
+                                    <span class="badge-back">SBV-TSV</span>
+                                </a>
+                                <a href="/converter/tsv-to-ttml" class="conversion-badge">
+                                    <span class="badge-front">TSV-TTML</span>
+                                    <span class="badge-back">TTML-TSV</span>
+                                </a>
+                                <a href="/converter/tsv-to-csv" class="conversion-badge">
+                                    <span class="badge-front">TSV-CSV</span>
+                                    <span class="badge-back">CSV-TSV</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div><!-- /supported-conversions -->
             </div><!-- /sitemap-content -->
         </section><!-- /sitemap -->
@@ -2238,7 +2520,7 @@
             <div class="footer-social">
                 <a href="https://x.com/8hqmx" target="_blank" rel="noopener noreferrer" class="footer-twitter"
                     aria-label="Follow us on X (Twitter)">
-                    <img src="/assets/x-twitter-footer.svg" alt="X (Twitter)" class="footer-social-icon">
+                    <img src="/webtools/assets/x-twitter-footer.svg" alt="X (Twitter)" class="footer-social-icon">
                 </a>
             </div>
             <p>
@@ -2247,8 +2529,8 @@
             </p>
         </footer>
     </div>
-    <script src="locales.js"></script>
-    <script src="/main/script.js?v=20251125_1"></script>
+    <script src="/webtools/locales.js"></script>
+    <script src="/webtools/script.js?v=20251207_0250"></script>
     <!-- Monetag Vignette Ad (Zone 10110916) - Loads 15 minutes after page load -->
     <script>
         // Load ad script 15 minutes after page load for better user experience
@@ -2286,225 +2568,7 @@
             }, 35000); // 35 seconds delay
         });
     </script>
-    <script>
-        // --- SHARED HELPER TO CLOSE OTHER PANELS ---
-        function closeOtherPanels(currentPanelName) {
-            // Arrays of panels to manage
-            const panels = {
-                converter: {
-                    nav: document.querySelector('.category-icons-nav'),
-                    btn: document.getElementById('converterExpandBtn'),
-                    items: document.querySelectorAll('.category-icon-btn')
-                },
-                downloader: {
-                    nav: document.querySelector('.platform-icons-nav'),
-                    btn: document.getElementById('downloaderExpandBtn'),
-                    items: document.querySelectorAll('.platform-icon-btn')
-                },
-                generator: {
-                    nav: document.querySelector('.generator-links-nav'),
-                    btn: document.getElementById('generatorExpandBtn'),
-                    items: [] // No items to toggle active state for now
-                },
-                calculator: {
-                    nav: document.querySelector('.calculator-links-nav'),
-                    btn: document.getElementById('calculatorExpandBtn'),
-                    items: [] // No items to toggle active state for now
-                }
-            };
-
-            const supportedConversions = document.querySelector('.supported-conversions');
-
-            // Iterate through all panels
-            for (const [name, panel] of Object.entries(panels)) {
-                // If this is the panel we want to keep/toggle, skip closing logic (handled by specific toggle function)
-                if (name === currentPanelName) continue;
-
-                // Close the panel
-                if (panel.nav && panel.nav.classList.contains('show')) {
-                    panel.nav.classList.remove('show');
-                    if (panel.btn) panel.btn.classList.remove('expanded');
-                    if (panel.items.length > 0) {
-                        panel.items.forEach(item => item.classList.remove('active'));
-                    }
-
-                    // Special handling for Converter: Hide badges/categories
-                    if (name === 'converter') {
-                        const allCategories = document.querySelectorAll('.conversion-category');
-                        allCategories.forEach(cat => {
-                            cat.classList.remove('active');
-                            cat.classList.remove('show-badges');
-                        });
-                        if (supportedConversions) {
-                            supportedConversions.style.display = 'none';
-                        }
-                    }
-                }
-            }
-        }
-
-        // --- CONVERTER EXPAND FUNCTIONALITY ---
-        const converterExpandBtn = document.getElementById('converterExpandBtn');
-        const categoryIconsNav = document.querySelector('.category-icons-nav');
-        const categoryIconBtns = document.querySelectorAll('.category-icon-btn');
-        const supportedConversions = document.querySelector('.supported-conversions');
-
-        function toggleCategoryIcons() {
-            if (categoryIconsNav) {
-                closeOtherPanels('converter'); // Close others first
-
-                categoryIconsNav.classList.toggle('show');
-                if (converterExpandBtn) {
-                    converterExpandBtn.classList.toggle('expanded');
-                }
-
-                // If hiding, also hide all categories
-                if (!categoryIconsNav.classList.contains('show')) {
-                    const allCategories = document.querySelectorAll('.conversion-category');
-                    allCategories.forEach(cat => {
-                        cat.classList.remove('active');
-                        cat.classList.remove('show-badges');
-                    });
-                    categoryIconBtns.forEach(btn => btn.classList.remove('active'));
-
-                    if (supportedConversions) {
-                        supportedConversions.style.display = 'none';
-                    }
-                } else {
-                    // Show supported conversions when category icons are shown
-                    if (supportedConversions) {
-                        supportedConversions.style.display = 'block';
-                    }
-                    // Show default category (cross-category) when expanding
-                    const defaultCategory = document.querySelector('.conversion-category[data-category="cross-category"]');
-                    const defaultCategoryBtn = document.querySelector('.category-icon-btn[data-category="cross-category"]');
-                    if (defaultCategory && !defaultCategory.classList.contains('active')) {
-                        defaultCategory.classList.add('active');
-                    }
-                    if (defaultCategoryBtn && !defaultCategoryBtn.classList.contains('active')) {
-                        defaultCategoryBtn.classList.add('active');
-                    }
-                }
-            }
-        }
-
-        if (converterExpandBtn) {
-            converterExpandBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                toggleCategoryIcons();
-            });
-        }
-
-        // Category icon click handler
-        categoryIconBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                const category = btn.dataset.category;
-
-                // Show category icons if not shown
-                if (!categoryIconsNav.classList.contains('show')) {
-                    categoryIconsNav.classList.add('show');
-                    if (converterExpandBtn) {
-                        converterExpandBtn.classList.add('expanded');
-                    }
-                }
-
-                categoryIconBtns.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-
-                const allCategories = document.querySelectorAll('.conversion-category');
-                allCategories.forEach(cat => {
-                    cat.classList.remove('active');
-                    cat.classList.remove('show-badges');
-                });
-
-                const targetCategory = document.querySelector(`.conversion-category[data-category="${category}"]`);
-                if (targetCategory) {
-                    targetCategory.classList.add('active');
-                    targetCategory.classList.add('show-badges');
-                    if (supportedConversions) {
-                        supportedConversions.style.display = 'block';
-                    }
-                }
-            });
-        });
-
-        // --- DOWNLOADER EXPAND FUNCTIONALITY ---
-        const downloaderExpandBtn = document.getElementById('downloaderExpandBtn');
-        const platformIconsNav = document.querySelector('.platform-icons-nav');
-        const platformIconBtns = document.querySelectorAll('.platform-icon-btn');
-
-
-        function togglePlatformIcons() {
-            if (platformIconsNav) {
-                closeOtherPanels('downloader'); // Close others first
-
-                platformIconsNav.classList.toggle('show');
-                if (downloaderExpandBtn) {
-                    downloaderExpandBtn.classList.toggle('expanded');
-                }
-
-                if (!platformIconsNav.classList.contains('show')) {
-                    platformIconBtns.forEach(btn => btn.classList.remove('active'));
-                }
-            }
-        }
-
-        if (downloaderExpandBtn) {
-            downloaderExpandBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                togglePlatformIcons();
-            });
-        }
-
-        // --- GENERATOR EXPAND FUNCTIONALITY ---
-        const generatorExpandBtn = document.getElementById('generatorExpandBtn');
-        const generatorLinksNav = document.querySelector('.generator-links-nav');
-
-        function toggleGeneratorIcons() {
-            if (generatorLinksNav) {
-                closeOtherPanels('generator'); // Close others first
-
-                generatorLinksNav.classList.toggle('show');
-                if (generatorExpandBtn) {
-                    generatorExpandBtn.classList.toggle('expanded');
-                }
-            }
-        }
-
-        if (generatorExpandBtn) {
-            generatorExpandBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                toggleGeneratorIcons();
-            });
-        }
-
-        // --- CALCULATOR EXPAND FUNCTIONALITY ---
-        const calculatorExpandBtn = document.getElementById('calculatorExpandBtn');
-        const calculatorLinksNav = document.querySelector('.calculator-links-nav');
-
-        function toggleCalculatorIcons() {
-            if (calculatorLinksNav) {
-                closeOtherPanels('calculator'); // Close others first
-
-                calculatorLinksNav.classList.toggle('show');
-                if (calculatorExpandBtn) {
-                    calculatorExpandBtn.classList.toggle('expanded');
-                }
-            }
-        }
-
-        if (calculatorExpandBtn) {
-            calculatorExpandBtn.addEventListener('click', (e) => {
-                e.preventDefault();
-                e.stopPropagation();
-                toggleCalculatorIcons();
-            });
-        }
-
-    </script>
+    <!-- Sitemap functionality handled by external script.js -->
 </body>
 
 </html>

@@ -2691,702 +2691,913 @@ body[dir="rtl"] .guide-steps {
     height: 100%;
     object-fit: contain;
     transition: all 0.3s ease;
+}
 
-    .platform-icon-btn:hover {
-        transform: translateY(-4px);
-        border-color: var(--primary-color);
-        box-shadow: 0 4px 12px rgba(var(--primary-color-rgb), 0.2);
-    }
+.platform-icon-btn:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(var(--primary-color-rgb), 0.2);
+}
 
-    .platform-icon-btn i {
-        font-size: 2.2rem;
-        color: var(--text-color);
-        transition: all 0.3s ease;
-    }
+.platform-icon-btn i {
+    font-size: 2.2rem;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
 
-    .platform-icon-btn:hover i {
-        color: var(--primary-color);
-        transform: scale(1.1);
-    }
+.platform-icon-btn:hover i {
+    color: var(--primary-color);
+    transform: scale(1.1);
+}
 
-    .platform-icon-btn.active {
-        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-        border-color: var(--primary-color);
-        box-shadow: 0 4px 16px rgba(var(--primary-color-rgb), 0.3);
-    }
+.platform-icon-btn.active {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 16px rgba(var(--primary-color-rgb), 0.3);
+}
 
-    /* =========================================
+/* =========================================
    Generator & Calculator Rainbow Styling
    ========================================= */
 
-    /* --- GENERATOR COLORS --- */
-
-    /* 1. QR Code - Blue */
-    .generator-links-nav a:nth-child(1) .platform-icon-btn {
-        border-color: rgba(59, 130, 246, 0.3);
-    }
-
-    .generator-links-nav a:nth-child(1) .platform-icon-btn i {
-        color: #3B82F6;
-    }
-
-    .generator-links-nav a:nth-child(1) .platform-icon-btn:hover {
-        border-color: #3B82F6;
-        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
-    }
-
-    /* 2. Password - Green */
-    .generator-links-nav a:nth-child(2) .platform-icon-btn {
-        border-color: rgba(16, 185, 129, 0.3);
-    }
-
-    .generator-links-nav a:nth-child(2) .platform-icon-btn i {
-        color: #10B981;
-    }
-
-    .generator-links-nav a:nth-child(2) .platform-icon-btn:hover {
-        border-color: #10B981;
-        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
-    }
-
-    /* 3. UUID - Purple */
-    .generator-links-nav a:nth-child(3) .platform-icon-btn {
-        border-color: rgba(139, 92, 246, 0.3);
-    }
-
-    .generator-links-nav a:nth-child(3) .platform-icon-btn i {
-        color: #8B5CF6;
-    }
-
-    .generator-links-nav a:nth-child(3) .platform-icon-btn:hover {
-        border-color: #8B5CF6;
-        box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
-    }
-
-    /* 4. Hash - Orange */
-    .generator-links-nav a:nth-child(4) .platform-icon-btn {
-        border-color: rgba(245, 158, 11, 0.3);
-    }
-
-    .generator-links-nav a:nth-child(4) .platform-icon-btn i {
-        color: #F59E0B;
-    }
-
-    .generator-links-nav a:nth-child(4) .platform-icon-btn:hover {
-        border-color: #F59E0B;
-        box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
-    }
-
-    /* 5. Barcode - Indigo */
-    .generator-links-nav a:nth-child(5) .platform-icon-btn {
-        border-color: rgba(99, 102, 241, 0.3);
-    }
-
-    .generator-links-nav a:nth-child(5) .platform-icon-btn i {
-        color: #6366F1;
-    }
-
-    .generator-links-nav a:nth-child(5) .platform-icon-btn:hover {
-        border-color: #6366F1;
-        box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
-    }
-
-    /* 6. Lorem Ipsum - Pink */
-    .generator-links-nav a:nth-child(6) .platform-icon-btn {
-        border-color: rgba(236, 72, 153, 0.3);
-    }
-
-    .generator-links-nav a:nth-child(6) .platform-icon-btn i {
-        color: #EC4899;
-    }
-
-    .generator-links-nav a:nth-child(6) .platform-icon-btn:hover {
-        border-color: #EC4899;
-        box-shadow: 0 4px 12px rgba(236, 72, 153, 0.2);
-    }
-
-    /* 7. Word Counter - Red */
-    .generator-links-nav a:nth-child(7) .platform-icon-btn {
-        border-color: rgba(239, 68, 68, 0.3);
-    }
-
-    .generator-links-nav a:nth-child(7) .platform-icon-btn i {
-        color: #EF4444;
-    }
-
-    .generator-links-nav a:nth-child(7) .platform-icon-btn:hover {
-        border-color: #EF4444;
-        box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
-    }
-
-    /* 8. Color Picker - Cyan */
-    .generator-links-nav a:nth-child(8) .platform-icon-btn {
-        border-color: rgba(6, 182, 212, 0.3);
-    }
-
-    .generator-links-nav a:nth-child(8) .platform-icon-btn i {
-        color: #06B6D4;
-    }
-
-    .generator-links-nav a:nth-child(8) .platform-icon-btn:hover {
-        border-color: #06B6D4;
-        box-shadow: 0 4px 12px rgba(6, 182, 212, 0.2);
-    }
-
-
-    /* --- CALCULATOR COLORS --- */
-
-    /* 1. BMI - Green (Health) */
-    .calculator-links-nav a:nth-child(1) .platform-icon-btn {
-        border-color: rgba(16, 185, 129, 0.3);
-    }
-
-    .calculator-links-nav a:nth-child(1) .platform-icon-btn i {
-        color: #10B981;
-    }
-
-    .calculator-links-nav a:nth-child(1) .platform-icon-btn:hover {
-        border-color: #10B981;
-        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
-    }
-
-    /* 2. Percentage - Blue (Math) */
-    .calculator-links-nav a:nth-child(2) .platform-icon-btn {
-        border-color: rgba(59, 130, 246, 0.3);
-    }
-
-    .calculator-links-nav a:nth-child(2) .platform-icon-btn i {
-        color: #3B82F6;
-    }
-
-    .calculator-links-nav a:nth-child(2) .platform-icon-btn:hover {
-        border-color: #3B82F6;
-        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
-    }
-
-    /* 3. Age - Orange (Time) */
-    .calculator-links-nav a:nth-child(3) .platform-icon-btn {
-        border-color: rgba(245, 158, 11, 0.3);
-    }
-
-    .calculator-links-nav a:nth-child(3) .platform-icon-btn i {
-        color: #F59E0B;
-    }
-
-    .calculator-links-nav a:nth-child(3) .platform-icon-btn:hover {
-        border-color: #F59E0B;
-        box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
-    }
-
-    /* 4. Calorie - Red (Burn) */
-    .calculator-links-nav a:nth-child(4) .platform-icon-btn {
-        border-color: rgba(239, 68, 68, 0.3);
-    }
-
-    .calculator-links-nav a:nth-child(4) .platform-icon-btn i {
-        color: #EF4444;
-    }
-
-    .calculator-links-nav a:nth-child(4) .platform-icon-btn:hover {
-        border-color: #EF4444;
-        box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
-    }
-
-    /* 5. Basic - Purple (General) */
-    .calculator-links-nav a:nth-child(5) .platform-icon-btn {
-        border-color: rgba(139, 92, 246, 0.3);
-    }
-
-    .calculator-links-nav a:nth-child(5) .platform-icon-btn i {
-        color: #8B5CF6;
-    }
-
-    .calculator-links-nav a:nth-child(5) .platform-icon-btn:hover {
-        border-color: #8B5CF6;
-        box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
-    }
-
-    /* 6. Date - Teal (Calendar) */
-    .calculator-links-nav a:nth-child(6) .platform-icon-btn {
-        border-color: rgba(20, 184, 166, 0.3);
-    }
-
-    .calculator-links-nav a:nth-child(6) .platform-icon-btn i {
-        color: #14B8A6;
-    }
-
-    .calculator-links-nav a:nth-child(6) .platform-icon-btn:hover {
-        border-color: #14B8A6;
-        box-shadow: 0 4px 12px rgba(20, 184, 166, 0.2);
-    }
-
-    .platform-icon-btn.active img {
-        filter: brightness(0) invert(1);
-    }
-
-    .platform-icon-btn.active i {
-        color: #ffffff !important;
-    }
-
-    /* Disabled state for platform icons */
-    .platform-icon-btn.disabled,
-    .platform-icon-btn:disabled {
-        opacity: 0.4;
-        cursor: not-allowed;
-        pointer-events: none;
-    }
-
-    .platform-icon-btn.disabled:hover,
-    .platform-icon-btn:disabled:hover {
-        transform: none;
-        border-color: var(--border-color);
-        box-shadow: none;
-    }
-
-    /* Dark mode support for platform icons */
-    body[data-theme="dark"] .platform-icon-btn img[src*="tiktok"],
-    body[data-theme="dark"] .platform-icon-btn img.x-icon,
-    body[data-theme="dark"] .platform-icon-btn img[src*="tumblr"] {
-        filter: invert(1);
-    }
-
-    body[data-theme="dark"] .platform-icon-btn.active img[src*="tiktok"],
-    body[data-theme="dark"] .platform-icon-btn.active img.x-icon,
-    body[data-theme="dark"] .platform-icon-btn.active img[src*="tumblr"] {
-        filter: brightness(0) invert(1);
-    }
-
-    .category-icon-btn {
-        width: 50px;
-        height: 50px;
-        border: 2px solid var(--border-color);
-        background: var(--card-bg);
-        border-radius: 12px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .category-icon-btn i {
-        font-size: 1.5rem;
-        color: var(--text-secondary);
-        transition: all 0.3s ease;
-    }
-
-    .category-icon-btn:hover {
-        transform: translateY(-4px);
-        border-color: var(--primary-color);
-        box-shadow: 0 4px 12px rgba(var(--primary-color-rgb), 0.2);
-    }
-
-    .category-icon-btn:hover i {
-        color: var(--primary-color);
-    }
-
-    .category-icon-btn.active {
-        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-        border-color: var(--primary-color);
-        box-shadow: 0 4px 16px rgba(var(--primary-color-rgb), 0.3);
-    }
-
-    .category-icon-btn.active i {
-        color: white;
-    }
-
-    /* 카테고리별 아이콘 색상 (라이트 모드) */
-    .category-icon-btn[data-category="cross-category"]:not(.active) {
-        border-color: rgba(239, 68, 68, 0.3);
-    }
-
-    .category-icon-btn[data-category="cross-category"]:not(.active) i {
-        color: #EF4444;
-    }
-
-    .category-icon-btn[data-category="video"]:not(.active) {
-        border-color: rgba(59, 130, 246, 0.3);
-    }
-
-    .category-icon-btn[data-category="video"]:not(.active) i {
-        color: #3B82F6;
-    }
-
-    .category-icon-btn[data-category="image"]:not(.active) {
-        border-color: rgba(16, 185, 129, 0.3);
-    }
-
-    .category-icon-btn[data-category="image"]:not(.active) i {
-        color: #10B981;
-    }
-
-    .category-icon-btn[data-category="audio"]:not(.active) {
-        border-color: rgba(236, 72, 153, 0.3);
-    }
-
-    .category-icon-btn[data-category="audio"]:not(.active) i {
-        color: #EC4899;
-    }
-
-    .category-icon-btn[data-category="document"]:not(.active) {
-        border-color: rgba(245, 158, 11, 0.3);
-    }
-
-    .category-icon-btn[data-category="document"]:not(.active) i {
-        color: #F59E0B;
-    }
-
-    .category-icon-btn[data-category="archive"]:not(.active) {
-        border-color: rgba(168, 85, 247, 0.3);
-    }
-
-    .category-icon-btn[data-category="archive"]:not(.active) i {
-        color: #A855F7;
-    }
-
-    /* 카테고리별 아이콘 색상 (다크 모드) */
-    body[data-theme="dark"] .category-icon-btn[data-category="cross-category"]:not(.active) {
-        border-color: rgba(248, 113, 113, 0.3);
-    }
-
-    body[data-theme="dark"] .category-icon-btn[data-category="cross-category"]:not(.active) i {
-        color: #F87171;
-    }
-
-    body[data-theme="dark"] .category-icon-btn[data-category="video"]:not(.active) {
-        border-color: rgba(147, 197, 253, 0.3);
-    }
-
-    body[data-theme="dark"] .category-icon-btn[data-category="video"]:not(.active) i {
-        color: #93C5FD;
-    }
-
-    body[data-theme="dark"] .category-icon-btn[data-category="image"]:not(.active) {
-        border-color: rgba(110, 231, 183, 0.3);
-    }
-
-    body[data-theme="dark"] .category-icon-btn[data-category="image"]:not(.active) i {
-        color: #6EE7B7;
-    }
-
-    body[data-theme="dark"] .category-icon-btn[data-category="audio"]:not(.active) {
-        border-color: rgba(249, 168, 212, 0.3);
-    }
-
-    body[data-theme="dark"] .category-icon-btn[data-category="audio"]:not(.active) i {
-        color: #F9A8D4;
-    }
-
-    body[data-theme="dark"] .category-icon-btn[data-category="document"]:not(.active) {
-        border-color: rgba(252, 211, 77, 0.3);
-    }
-
-    body[data-theme="dark"] .category-icon-btn[data-category="document"]:not(.active) i {
-        color: #FCD34D;
-    }
-
-    body[data-theme="dark"] .category-icon-btn[data-category="archive"]:not(.active) {
-        border-color: rgba(192, 132, 252, 0.3);
-    }
-
-    body[data-theme="dark"] .category-icon-btn[data-category="archive"]:not(.active) i {
-        color: #C084FC;
-    }
-
-    /* Conversion Category */
-    .conversion-category {
-        display: none;
-    }
-
-    .conversion-category.active {
-        display: block;
-    }
-
-    /* Conversion Badges Container */
-    .conversion-badges-container {
-        padding: 0 1.5rem 1.5rem 1.5rem;
-    }
-
-    /* Conversion Subcategory */
-    .conversion-subcategory {
-        margin-bottom: 2rem;
-        position: relative;
-    }
-
-    .conversion-subcategory:last-child {
-        margin-bottom: 0;
-    }
-
-    /* Show More Button */
-    .show-more-conversions-btn {
-        display: block;
-        width: 32px;
-        height: 32px;
-        border: 2px solid var(--primary-color);
-        background: transparent;
-        color: var(--primary-color);
-        border-radius: 50%;
-        cursor: pointer;
-        margin: 1rem auto 0;
-        transition: all 0.3s ease;
-        font-size: 14px;
-        font-weight: bold;
-    }
-
-    .show-more-conversions-btn:hover {
-        background: var(--primary-color);
-        color: white;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-    }
-
-    .show-more-conversions-btn.expanded {
-        transform: rotate(45deg);
-    }
-
-    .show-more-conversions-btn.expanded:hover {
-        transform: rotate(45deg) translateY(-2px);
-    }
-
-    .conversion-subcategory h5 {
-        font-size: 1.1rem;
-        font-weight: 600;
-        color: var(--text-color);
-        margin-bottom: 1rem;
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-    }
-
-    .conversion-subcategory h5 i {
-        color: var(--primary-color);
-    }
-
-    /* Conversion Badges Grid */
+/* --- GENERATOR COLORS --- */
+
+/* 1. QR Code - Blue */
+.generator-links-nav a:nth-child(1) .platform-icon-btn {
+    border-color: rgba(59, 130, 246, 0.4);
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.2);
+}
+
+.generator-links-nav a:nth-child(1) .platform-icon-btn i {
+    color: #3B82F6;
+}
+
+.generator-links-nav a:nth-child(1) .platform-icon-btn:hover {
+    border-color: #3B82F6;
+    box-shadow: 0 4px 16px rgba(59, 130, 246, 0.35);
+}
+
+/* 2. Password - Green */
+.generator-links-nav a:nth-child(2) .platform-icon-btn {
+    border-color: rgba(16, 185, 129, 0.4);
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.2);
+}
+
+.generator-links-nav a:nth-child(2) .platform-icon-btn i {
+    color: #10B981;
+}
+
+.generator-links-nav a:nth-child(2) .platform-icon-btn:hover {
+    border-color: #10B981;
+    box-shadow: 0 4px 16px rgba(16, 185, 129, 0.35);
+}
+
+/* 3. UUID - Purple */
+.generator-links-nav a:nth-child(3) .platform-icon-btn {
+    border-color: rgba(139, 92, 246, 0.4);
+    box-shadow: 0 0 8px rgba(139, 92, 246, 0.2);
+}
+
+.generator-links-nav a:nth-child(3) .platform-icon-btn i {
+    color: #8B5CF6;
+}
+
+.generator-links-nav a:nth-child(3) .platform-icon-btn:hover {
+    border-color: #8B5CF6;
+    box-shadow: 0 4px 16px rgba(139, 92, 246, 0.35);
+}
+
+/* 4. Hash - Orange */
+.generator-links-nav a:nth-child(4) .platform-icon-btn {
+    border-color: rgba(245, 158, 11, 0.4);
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.2);
+}
+
+.generator-links-nav a:nth-child(4) .platform-icon-btn i {
+    color: #F59E0B;
+}
+
+.generator-links-nav a:nth-child(4) .platform-icon-btn:hover {
+    border-color: #F59E0B;
+    box-shadow: 0 4px 16px rgba(245, 158, 11, 0.35);
+}
+
+/* 5. Barcode - Indigo */
+.generator-links-nav a:nth-child(5) .platform-icon-btn {
+    border-color: rgba(99, 102, 241, 0.4);
+    box-shadow: 0 0 8px rgba(99, 102, 241, 0.2);
+}
+
+.generator-links-nav a:nth-child(5) .platform-icon-btn i {
+    color: #6366F1;
+}
+
+.generator-links-nav a:nth-child(5) .platform-icon-btn:hover {
+    border-color: #6366F1;
+    box-shadow: 0 4px 16px rgba(99, 102, 241, 0.35);
+}
+
+/* 6. Lorem Ipsum - Pink */
+.generator-links-nav a:nth-child(6) .platform-icon-btn {
+    border-color: rgba(236, 72, 153, 0.4);
+    box-shadow: 0 0 8px rgba(236, 72, 153, 0.2);
+}
+
+.generator-links-nav a:nth-child(6) .platform-icon-btn i {
+    color: #EC4899;
+}
+
+.generator-links-nav a:nth-child(6) .platform-icon-btn:hover {
+    border-color: #EC4899;
+    box-shadow: 0 4px 16px rgba(236, 72, 153, 0.35);
+}
+
+/* 7. Word Counter - Red */
+.generator-links-nav a:nth-child(7) .platform-icon-btn {
+    border-color: rgba(239, 68, 68, 0.4);
+    box-shadow: 0 0 8px rgba(239, 68, 68, 0.2);
+}
+
+.generator-links-nav a:nth-child(7) .platform-icon-btn i {
+    color: #EF4444;
+}
+
+.generator-links-nav a:nth-child(7) .platform-icon-btn:hover {
+    border-color: #EF4444;
+    box-shadow: 0 4px 16px rgba(239, 68, 68, 0.35);
+}
+
+/* 8. Color Picker - Cyan */
+.generator-links-nav a:nth-child(8) .platform-icon-btn {
+    border-color: rgba(6, 182, 212, 0.4);
+    box-shadow: 0 0 8px rgba(6, 182, 212, 0.2);
+}
+
+.generator-links-nav a:nth-child(8) .platform-icon-btn i {
+    color: #06B6D4;
+}
+
+.generator-links-nav a:nth-child(8) .platform-icon-btn:hover {
+    border-color: #06B6D4;
+    box-shadow: 0 4px 16px rgba(6, 182, 212, 0.35);
+}
+
+
+/* --- CALCULATOR COLORS --- */
+
+/* 1. BMI - Green (Health) */
+.calculator-links-nav a:nth-child(1) .platform-icon-btn {
+    border-color: rgba(16, 185, 129, 0.4);
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.2);
+}
+
+.calculator-links-nav a:nth-child(1) .platform-icon-btn i {
+    color: #10B981;
+}
+
+.calculator-links-nav a:nth-child(1) .platform-icon-btn:hover {
+    border-color: #10B981;
+    box-shadow: 0 4px 16px rgba(16, 185, 129, 0.35);
+}
+
+/* 2. Percentage - Blue (Math) */
+.calculator-links-nav a:nth-child(2) .platform-icon-btn {
+    border-color: rgba(59, 130, 246, 0.4);
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.2);
+}
+
+.calculator-links-nav a:nth-child(2) .platform-icon-btn i {
+    color: #3B82F6;
+}
+
+.calculator-links-nav a:nth-child(2) .platform-icon-btn:hover {
+    border-color: #3B82F6;
+    box-shadow: 0 4px 16px rgba(59, 130, 246, 0.35);
+}
+
+/* 3. Age - Orange (Time) */
+.calculator-links-nav a:nth-child(3) .platform-icon-btn {
+    border-color: rgba(245, 158, 11, 0.4);
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.2);
+}
+
+.calculator-links-nav a:nth-child(3) .platform-icon-btn i {
+    color: #F59E0B;
+}
+
+.calculator-links-nav a:nth-child(3) .platform-icon-btn:hover {
+    border-color: #F59E0B;
+    box-shadow: 0 4px 16px rgba(245, 158, 11, 0.35);
+}
+
+/* 4. Calorie - Red (Burn) */
+.calculator-links-nav a:nth-child(4) .platform-icon-btn {
+    border-color: rgba(239, 68, 68, 0.4);
+    box-shadow: 0 0 8px rgba(239, 68, 68, 0.2);
+}
+
+.calculator-links-nav a:nth-child(4) .platform-icon-btn i {
+    color: #EF4444;
+}
+
+.calculator-links-nav a:nth-child(4) .platform-icon-btn:hover {
+    border-color: #EF4444;
+    box-shadow: 0 4px 16px rgba(239, 68, 68, 0.35);
+}
+
+/* 5. Basic - Purple (General) */
+.calculator-links-nav a:nth-child(5) .platform-icon-btn {
+    border-color: rgba(139, 92, 246, 0.4);
+    box-shadow: 0 0 8px rgba(139, 92, 246, 0.2);
+}
+
+.calculator-links-nav a:nth-child(5) .platform-icon-btn i {
+    color: #8B5CF6;
+}
+
+.calculator-links-nav a:nth-child(5) .platform-icon-btn:hover {
+    border-color: #8B5CF6;
+    box-shadow: 0 4px 16px rgba(139, 92, 246, 0.35);
+}
+
+/* 6. Date - Teal (Calendar) */
+.calculator-links-nav a:nth-child(6) .platform-icon-btn {
+    border-color: rgba(20, 184, 166, 0.4);
+    box-shadow: 0 0 8px rgba(20, 184, 166, 0.2);
+}
+
+.calculator-links-nav a:nth-child(6) .platform-icon-btn i {
+    color: #14B8A6;
+}
+
+.calculator-links-nav a:nth-child(6) .platform-icon-btn:hover {
+    border-color: #14B8A6;
+    box-shadow: 0 4px 16px rgba(20, 184, 166, 0.35);
+}
+
+.platform-icon-btn.active img {
+    filter: brightness(0) invert(1);
+}
+
+.platform-icon-btn.active i {
+    color: #ffffff !important;
+}
+
+/* Disabled state for platform icons */
+.platform-icon-btn.disabled,
+.platform-icon-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.platform-icon-btn.disabled:hover,
+.platform-icon-btn:disabled:hover {
+    transform: none;
+    border-color: var(--border-color);
+    box-shadow: none;
+}
+
+/* Dark mode support for platform icons */
+body[data-theme="dark"] .platform-icon-btn img[src*="tiktok"],
+body[data-theme="dark"] .platform-icon-btn img.x-icon,
+body[data-theme="dark"] .platform-icon-btn img[src*="tumblr"] {
+    filter: invert(1);
+}
+
+body[data-theme="dark"] .platform-icon-btn.active img[src*="tiktok"],
+body[data-theme="dark"] .platform-icon-btn.active img.x-icon,
+body[data-theme="dark"] .platform-icon-btn.active img[src*="tumblr"] {
+    filter: brightness(0) invert(1);
+}
+
+.category-icon-btn {
+    width: 80px;
+    height: 80px;
+    border: 2px solid var(--border-color);
+    background: var(--card-bg);
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.category-icon-btn i {
+    font-size: 2.5rem;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+    opacity: 0.15;
+    position: absolute;
+    z-index: 1;
+}
+
+.category-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.category-icon-btn:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 12px rgba(var(--primary-color-rgb), 0.2);
+}
+
+.category-icon-btn:hover i {
+    color: var(--primary-color);
+}
+
+.category-icon-btn:hover .category-label {
+    color: var(--primary-color);
+}
+
+.category-icon-btn.active {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 16px rgba(var(--primary-color-rgb), 0.3);
+}
+
+.category-icon-btn.active i {
+    color: white;
+}
+
+.category-icon-btn.active .category-label {
+    color: white;
+}
+
+/* 카테고리별 아이콘 색상 및 발광 효과 (라이트 모드) */
+.category-icon-btn[data-category="cross-category"]:not(.active) {
+    border-color: rgba(239, 68, 68, 0.4);
+    box-shadow: 0 0 8px rgba(239, 68, 68, 0.2);
+}
+
+.category-icon-btn[data-category="cross-category"]:not(.active) i {
+    color: #EF4444;
+    opacity: 0.2;
+}
+
+.category-icon-btn[data-category="cross-category"]:not(.active) .category-label {
+    color: #DC2626;
+}
+
+.category-icon-btn[data-category="cross-category"]:not(.active):hover {
+    box-shadow: 0 4px 16px rgba(239, 68, 68, 0.35);
+}
+
+.category-icon-btn[data-category="video"]:not(.active) {
+    border-color: rgba(59, 130, 246, 0.4);
+    box-shadow: 0 0 8px rgba(59, 130, 246, 0.2);
+}
+
+.category-icon-btn[data-category="video"]:not(.active) i {
+    color: #3B82F6;
+    opacity: 0.2;
+}
+
+.category-icon-btn[data-category="video"]:not(.active) .category-label {
+    color: #2563EB;
+}
+
+.category-icon-btn[data-category="video"]:not(.active):hover {
+    box-shadow: 0 4px 16px rgba(59, 130, 246, 0.35);
+}
+
+.category-icon-btn[data-category="image"]:not(.active) {
+    border-color: rgba(16, 185, 129, 0.4);
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.2);
+}
+
+.category-icon-btn[data-category="image"]:not(.active) i {
+    color: #10B981;
+    opacity: 0.2;
+}
+
+.category-icon-btn[data-category="image"]:not(.active) .category-label {
+    color: #059669;
+}
+
+.category-icon-btn[data-category="image"]:not(.active):hover {
+    box-shadow: 0 4px 16px rgba(16, 185, 129, 0.35);
+}
+
+.category-icon-btn[data-category="audio"]:not(.active) {
+    border-color: rgba(236, 72, 153, 0.4);
+    box-shadow: 0 0 8px rgba(236, 72, 153, 0.2);
+}
+
+.category-icon-btn[data-category="audio"]:not(.active) i {
+    color: #EC4899;
+    opacity: 0.2;
+}
+
+.category-icon-btn[data-category="audio"]:not(.active) .category-label {
+    color: #DB2777;
+}
+
+.category-icon-btn[data-category="audio"]:not(.active):hover {
+    box-shadow: 0 4px 16px rgba(236, 72, 153, 0.35);
+}
+
+.category-icon-btn[data-category="document"]:not(.active) {
+    border-color: rgba(245, 158, 11, 0.4);
+    box-shadow: 0 0 8px rgba(245, 158, 11, 0.2);
+}
+
+.category-icon-btn[data-category="document"]:not(.active) i {
+    color: #F59E0B;
+    opacity: 0.2;
+}
+
+.category-icon-btn[data-category="document"]:not(.active) .category-label {
+    color: #D97706;
+}
+
+.category-icon-btn[data-category="document"]:not(.active):hover {
+    box-shadow: 0 4px 16px rgba(245, 158, 11, 0.35);
+}
+
+.category-icon-btn[data-category="archive"]:not(.active) {
+    border-color: rgba(168, 85, 247, 0.4);
+    box-shadow: 0 0 8px rgba(168, 85, 247, 0.2);
+}
+
+.category-icon-btn[data-category="archive"]:not(.active) i {
+    color: #A855F7;
+    opacity: 0.2;
+}
+
+.category-icon-btn[data-category="archive"]:not(.active) .category-label {
+    color: #9333EA;
+}
+
+.category-icon-btn[data-category="archive"]:not(.active):hover {
+    box-shadow: 0 4px 16px rgba(168, 85, 247, 0.35);
+}
+
+.category-icon-btn[data-category="subtitle"]:not(.active) {
+    border-color: rgba(6, 182, 212, 0.4);
+    box-shadow: 0 0 8px rgba(6, 182, 212, 0.2);
+}
+
+.category-icon-btn[data-category="subtitle"]:not(.active) i {
+    color: #06B6D4;
+    opacity: 0.2;
+}
+
+.category-icon-btn[data-category="subtitle"]:not(.active) .category-label {
+    color: #0891B2;
+}
+
+.category-icon-btn[data-category="subtitle"]:not(.active):hover {
+    box-shadow: 0 4px 16px rgba(6, 182, 212, 0.35);
+}
+
+/* 카테고리별 아이콘 색상 및 발광 효과 (다크 모드) */
+body[data-theme="dark"] .category-icon-btn[data-category="cross-category"]:not(.active) {
+    border-color: rgba(248, 113, 113, 0.4);
+    box-shadow: 0 0 8px rgba(248, 113, 113, 0.25);
+}
+
+body[data-theme="dark"] .category-icon-btn[data-category="cross-category"]:not(.active) i {
+    color: #F87171;
+    opacity: 0.25;
+}
+
+body[data-theme="dark"] .category-icon-btn[data-category="cross-category"]:not(.active) .category-label {
+    color: #FCA5A5;
+}
+
+body[data-theme="dark"] .category-icon-btn[data-category="cross-category"]:not(.active):hover {
+    box-shadow: 0 4px 16px rgba(248, 113, 113, 0.4);
+}
+
+body[data-theme="dark"] .category-icon-btn[data-category="video"]:not(.active) {
+    border-color: rgba(147, 197, 253, 0.4);
+    box-shadow: 0 0 8px rgba(147, 197, 253, 0.25);
+}
+
+body[data-theme="dark"] .category-icon-btn[data-category="video"]:not(.active) i {
+    color: #93C5FD;
+    opacity: 0.25;
+}
+
+body[data-theme="dark"] .category-icon-btn[data-category="video"]:not(.active) .category-label {
+    color: #BFDBFE;
+}
+
+body[data-theme="dark"] .category-icon-btn[data-category="video"]:not(.active):hover {
+    box-shadow: 0 4px 16px rgba(147, 197, 253, 0.4);
+}
+
+body[data-theme="dark"] .category-icon-btn[data-category="image"]:not(.active) {
+    border-color: rgba(110, 231, 183, 0.4);
+    box-shadow: 0 0 8px rgba(110, 231, 183, 0.25);
+}
+
+body[data-theme="dark"] .category-icon-btn[data-category="image"]:not(.active) i {
+    color: #6EE7B7;
+    opacity: 0.25;
+}
+
+body[data-theme="dark"] .category-icon-btn[data-category="image"]:not(.active) .category-label {
+    color: #A7F3D0;
+}
+
+body[data-theme="dark"] .category-icon-btn[data-category="image"]:not(.active):hover {
+    box-shadow: 0 4px 16px rgba(110, 231, 183, 0.4);
+}
+
+body[data-theme="dark"] .category-icon-btn[data-category="audio"]:not(.active) {
+    border-color: rgba(249, 168, 212, 0.4);
+    box-shadow: 0 0 8px rgba(249, 168, 212, 0.25);
+}
+
+body[data-theme="dark"] .category-icon-btn[data-category="audio"]:not(.active) i {
+    color: #F9A8D4;
+    opacity: 0.25;
+}
+
+body[data-theme="dark"] .category-icon-btn[data-category="audio"]:not(.active) .category-label {
+    color: #FBCFE8;
+}
+
+body[data-theme="dark"] .category-icon-btn[data-category="audio"]:not(.active):hover {
+    box-shadow: 0 4px 16px rgba(249, 168, 212, 0.4);
+}
+
+body[data-theme="dark"] .category-icon-btn[data-category="document"]:not(.active) {
+    border-color: rgba(252, 211, 77, 0.4);
+    box-shadow: 0 0 8px rgba(252, 211, 77, 0.25);
+}
+
+body[data-theme="dark"] .category-icon-btn[data-category="document"]:not(.active) i {
+    color: #FCD34D;
+    opacity: 0.25;
+}
+
+body[data-theme="dark"] .category-icon-btn[data-category="document"]:not(.active) .category-label {
+    color: #FDE68A;
+}
+
+body[data-theme="dark"] .category-icon-btn[data-category="document"]:not(.active):hover {
+    box-shadow: 0 4px 16px rgba(252, 211, 77, 0.4);
+}
+
+body[data-theme="dark"] .category-icon-btn[data-category="archive"]:not(.active) {
+    border-color: rgba(192, 132, 252, 0.4);
+    box-shadow: 0 0 8px rgba(192, 132, 252, 0.25);
+}
+
+body[data-theme="dark"] .category-icon-btn[data-category="archive"]:not(.active) i {
+    color: #C084FC;
+    opacity: 0.25;
+}
+
+body[data-theme="dark"] .category-icon-btn[data-category="archive"]:not(.active) .category-label {
+    color: #D8B4FE;
+}
+
+body[data-theme="dark"] .category-icon-btn[data-category="archive"]:not(.active):hover {
+    box-shadow: 0 4px 16px rgba(192, 132, 252, 0.4);
+}
+
+body[data-theme="dark"] .category-icon-btn[data-category="subtitle"]:not(.active) {
+    border-color: rgba(103, 232, 249, 0.4);
+    box-shadow: 0 0 8px rgba(103, 232, 249, 0.25);
+}
+
+body[data-theme="dark"] .category-icon-btn[data-category="subtitle"]:not(.active) i {
+    color: #67E8F9;
+    opacity: 0.25;
+}
+
+body[data-theme="dark"] .category-icon-btn[data-category="subtitle"]:not(.active) .category-label {
+    color: #A5F3FC;
+}
+
+body[data-theme="dark"] .category-icon-btn[data-category="subtitle"]:not(.active):hover {
+    box-shadow: 0 4px 16px rgba(103, 232, 249, 0.4);
+}
+
+
+
+/* Conversion Category */
+.conversion-category {
+    display: none;
+}
+
+.conversion-category.active {
+    display: block;
+}
+
+/* Conversion Badges Container */
+.conversion-badges-container {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+/* Conversion Subcategory */
+.conversion-subcategory {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.conversion-subcategory:last-child {
+    margin-bottom: 0;
+}
+
+/* Show More Button */
+.show-more-conversions-btn {
+    display: block;
+    width: 32px;
+    height: 32px;
+    border: 2px solid var(--primary-color);
+    background: transparent;
+    color: var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+    margin: 1rem auto 0;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.show-more-conversions-btn:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.show-more-conversions-btn.expanded {
+    transform: rotate(45deg);
+}
+
+.show-more-conversions-btn.expanded:hover {
+    transform: rotate(45deg) translateY(-2px);
+}
+
+.conversion-subcategory h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.conversion-subcategory h5 i {
+    color: var(--primary-color);
+}
+
+/* Conversion Badges Grid */
+.conversion-badges {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 모바일: 3열 */
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+/* 768px 이상(태블릿)에서 뱃지 6열 */
+@media (min-width: 768px) {
     .conversion-badges {
-        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+/* 1024px 이상(데스크톱)에서 뱃지 8열 */
+@media (min-width: 1024px) {
+    .conversion-badges {
+        grid-template-columns: repeat(8, 1fr);
+    }
+}
+
+/* Conversion Badge (Supported Format Style) */
+.conversion-badge {
+    position: relative;
+    height: 32px;
+    text-decoration: none;
+    display: block;
+    border-radius: 8px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+    overflow: hidden;
+    white-space: nowrap;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+/* Hidden badges (for show more functionality) */
+.conversion-badge.hidden {
+    display: none;
+}
+
+.conversion-badge:hover {
+    transform: translateY(-2px);
+}
+
+.badge-front,
+.badge-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    letter-spacing: 0.05em;
+    word-spacing: 0.2em;
+}
+
+.badge-front {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.badge-back {
+    opacity: 0;
+    transform: translateX(100%);
+}
+
+.conversion-badge:hover .badge-front {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+
+.conversion-badge:hover .badge-back {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* 단방향 변환 뱃지 - 회전 애니메이션 제거 */
+.conversion-badge.unidirectional:hover {
+    transform: translateY(-2px);
+    /* 살짝 올라가는 효과만 유지 */
+}
+
+.conversion-badge.unidirectional:hover .badge-front {
+    opacity: 1;
+    /* 앞면 유지 */
+    transform: translateX(0);
+    /* 좌우 이동 제거 */
+}
+
+.conversion-badge.unidirectional:hover .badge-back {
+    opacity: 0;
+    /* 뒷면 숨김 */
+    transform: translateX(100%);
+    /* 원래 위치 유지 */
+}
+
+/* 카테고리별 뱃지 색상 (라이트 모드) */
+/* Cross-Category - Red/Fire */
+.conversion-category[data-category="cross-category"] .conversion-badge {
+    background-color: rgba(239, 68, 68, 0.15);
+    color: #EF4444;
+}
+
+/* Video - Blue */
+.conversion-category[data-category="video"] .conversion-badge {
+    background-color: rgba(59, 130, 246, 0.15);
+    color: #3B82F6;
+}
+
+/* Image - Green */
+.conversion-category[data-category="image"] .conversion-badge {
+    background-color: rgba(16, 185, 129, 0.15);
+    color: #10B981;
+}
+
+/* Audio - Pink */
+.conversion-category[data-category="audio"] .conversion-badge {
+    background-color: rgba(236, 72, 153, 0.15);
+    color: #EC4899;
+}
+
+/* Document - Orange */
+.conversion-category[data-category="document"] .conversion-badge {
+    background-color: rgba(245, 158, 11, 0.15);
+    color: #F59E0B;
+}
+
+/* Archive - Purple */
+.conversion-category[data-category="archive"] .conversion-badge {
+    background-color: rgba(168, 85, 247, 0.15);
+    color: #A855F7;
+}
+
+/* 카테고리별 뱃지 색상 (다크 모드) */
+body[data-theme="dark"] .conversion-category[data-category="cross-category"] .conversion-badge {
+    background-color: rgba(248, 113, 113, 0.15);
+    color: #F87171;
+}
+
+body[data-theme="dark"] .conversion-category[data-category="video"] .conversion-badge {
+    background-color: rgba(147, 197, 253, 0.15);
+    color: #93C5FD;
+}
+
+body[data-theme="dark"] .conversion-category[data-category="image"] .conversion-badge {
+    background-color: rgba(110, 231, 183, 0.15);
+    color: #6EE7B7;
+}
+
+body[data-theme="dark"] .conversion-category[data-category="audio"] .conversion-badge {
+    background-color: rgba(249, 168, 212, 0.15);
+    color: #F9A8D4;
+}
+
+body[data-theme="dark"] .conversion-category[data-category="document"] .conversion-badge {
+    background-color: rgba(252, 211, 77, 0.15);
+    color: #FCD34D;
+}
+
+body[data-theme="dark"] .conversion-category[data-category="archive"] .conversion-badge {
+    background-color: rgba(192, 132, 252, 0.15);
+    color: #C084FC;
+}
+
+/* Subtitle Badges - Red */
+.conversion-category[data-category="subtitle"] .conversion-badge {
+    background-color: rgba(239, 68, 68, 0.15);
+    color: #EF4444;
+}
+
+body[data-theme="dark"] .conversion-category[data-category="subtitle"] .conversion-badge {
+    background-color: rgba(252, 165, 165, 0.15);
+    color: #FCA5A5;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .supported-conversions {
+        padding: 1.5rem;
+    }
+
+    .supported-conversions h3 {
+        font-size: 1.5rem;
+    }
+
+    .category-header {
+        padding: 1rem;
+    }
+
+    .category-header h4 {
+        font-size: 1rem;
+    }
+
+    .badge-count {
+        font-size: 0.65rem;
+        padding: 0.2rem 0.5rem;
+    }
+
+    .conversion-badges {
         grid-template-columns: repeat(3, 1fr);
-        /* 모바일: 3열 */
-        gap: 0.5rem;
+        gap: 0.4rem;
         width: 100%;
         max-width: 100%;
         box-sizing: border-box;
     }
 
-    /* 768px 이상(태블릿)에서 뱃지 6열 */
-    @media (min-width: 768px) {
-        .conversion-badges {
-            grid-template-columns: repeat(6, 1fr);
-        }
-    }
-
-    /* 1024px 이상(데스크톱)에서 뱃지 8열 */
-    @media (min-width: 1024px) {
-        .conversion-badges {
-            grid-template-columns: repeat(8, 1fr);
-        }
-    }
-
-    /* Conversion Badge (Supported Format Style) */
     .conversion-badge {
-        position: relative;
-        height: 32px;
-        text-decoration: none;
-        display: block;
-        border-radius: 8px;
+        height: 36px;
         font-size: 0.7rem;
-        font-weight: 600;
-        transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
-        overflow: hidden;
-        white-space: nowrap;
-        min-width: 0;
+    }
+
+    .conversion-subcategory h5 {
+        font-size: 1rem;
+    }
+}
+
+/* 480px 이하 모바일 - 3열 유지 */
+@media (max-width: 480px) {
+    .conversion-badges {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.35rem;
+        width: 100%;
+        max-width: 100%;
         box-sizing: border-box;
     }
 
-    /* Hidden badges (for show more functionality) */
-    .conversion-badge.hidden {
-        display: none;
+    .conversion-badge {
+        height: 32px;
+        font-size: 0.65rem;
     }
 
-    .conversion-badge:hover {
-        transform: translateY(-2px);
-    }
-
-    .badge-front,
-    .badge-back {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: opacity 0.3s ease, transform 0.3s ease;
-        letter-spacing: 0.05em;
-        word-spacing: 0.2em;
-    }
-
-    .badge-front {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    .badge-back {
-        opacity: 0;
-        transform: translateX(100%);
-    }
-
-    .conversion-badge:hover .badge-front {
-        opacity: 0;
-        transform: translateX(-100%);
-    }
-
-    .conversion-badge:hover .badge-back {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    /* 단방향 변환 뱃지 - 회전 애니메이션 제거 */
-    .conversion-badge.unidirectional:hover {
-        transform: translateY(-2px);
-        /* 살짝 올라가는 효과만 유지 */
-    }
-
-    .conversion-badge.unidirectional:hover .badge-front {
-        opacity: 1;
-        /* 앞면 유지 */
-        transform: translateX(0);
-        /* 좌우 이동 제거 */
-    }
-
-    .conversion-badge.unidirectional:hover .badge-back {
-        opacity: 0;
-        /* 뒷면 숨김 */
-        transform: translateX(100%);
-        /* 원래 위치 유지 */
-    }
-
-    /* 카테고리별 뱃지 색상 (라이트 모드) */
-    /* Cross-Category - Red/Fire */
-    .conversion-category[data-category="cross-category"] .conversion-badge {
-        background-color: rgba(239, 68, 68, 0.15);
-        color: #EF4444;
-    }
-
-    /* Video - Blue */
-    .conversion-category[data-category="video"] .conversion-badge {
-        background-color: rgba(59, 130, 246, 0.15);
-        color: #3B82F6;
-    }
-
-    /* Image - Green */
-    .conversion-category[data-category="image"] .conversion-badge {
-        background-color: rgba(16, 185, 129, 0.15);
-        color: #10B981;
-    }
-
-    /* Audio - Pink */
-    .conversion-category[data-category="audio"] .conversion-badge {
-        background-color: rgba(236, 72, 153, 0.15);
-        color: #EC4899;
-    }
-
-    /* Document - Orange */
-    .conversion-category[data-category="document"] .conversion-badge {
-        background-color: rgba(245, 158, 11, 0.15);
-        color: #F59E0B;
-    }
-
-    /* Archive - Purple */
-    .conversion-category[data-category="archive"] .conversion-badge {
-        background-color: rgba(168, 85, 247, 0.15);
-        color: #A855F7;
-    }
-
-    /* 카테고리별 뱃지 색상 (다크 모드) */
-    body[data-theme="dark"] .conversion-category[data-category="cross-category"] .conversion-badge {
-        background-color: rgba(248, 113, 113, 0.15);
-        color: #F87171;
-    }
-
-    body[data-theme="dark"] .conversion-category[data-category="video"] .conversion-badge {
-        background-color: rgba(147, 197, 253, 0.15);
-        color: #93C5FD;
-    }
-
-    body[data-theme="dark"] .conversion-category[data-category="image"] .conversion-badge {
-        background-color: rgba(110, 231, 183, 0.15);
-        color: #6EE7B7;
-    }
-
-    body[data-theme="dark"] .conversion-category[data-category="audio"] .conversion-badge {
-        background-color: rgba(249, 168, 212, 0.15);
-        color: #F9A8D4;
-    }
-
-    body[data-theme="dark"] .conversion-category[data-category="document"] .conversion-badge {
-        background-color: rgba(252, 211, 77, 0.15);
-        color: #FCD34D;
-    }
-
-    body[data-theme="dark"] .conversion-category[data-category="archive"] .conversion-badge {
-        background-color: rgba(192, 132, 252, 0.15);
-        color: #C084FC;
-    }
-
-    /* Mobile Responsiveness */
-    @media (max-width: 768px) {
-        .supported-conversions {
-            padding: 1.5rem;
-        }
-
-        .supported-conversions h3 {
-            font-size: 1.5rem;
-        }
-
-        .category-header {
-            padding: 1rem;
-        }
-
-        .category-header h4 {
-            font-size: 1rem;
-        }
-
-        .badge-count {
-            font-size: 0.65rem;
-            padding: 0.2rem 0.5rem;
-        }
-
-        .conversion-badges {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0.4rem;
-            width: 100%;
-            max-width: 100%;
-            box-sizing: border-box;
-        }
-
-        .conversion-badge {
-            height: 36px;
-            font-size: 0.7rem;
-        }
-
-        .conversion-subcategory h5 {
-            font-size: 1rem;
-        }
-    }
-
-    /* 480px 이하 모바일 - 3열 유지 */
-    @media (max-width: 480px) {
-        .conversion-badges {
-            grid-template-columns: repeat(3, 1fr);
-            gap: 0.35rem;
-            width: 100%;
-            max-width: 100%;
-            box-sizing: border-box;
-        }
-
-        .conversion-badge {
-            height: 32px;
-            font-size: 0.65rem;
-        }
-
-    }
+}

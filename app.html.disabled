@@ -7,7 +7,7 @@
     <meta name="description" content="Download HQMX Desktop App for Windows, macOS, and Linux. Free 4K downloader with offline support and 1000+ platform compatibility.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="/style.css?v=20251117g">
-    <link rel="icon" type="image/png" href="/assets/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="/downloader/assets/favicon-96x96.png" sizes="96x96" />
 </head>
 <body>
     <div class="container">
@@ -255,13 +255,18 @@ sudo apt-get install -f</code></pre>
             </div>
         </main>
 
-        <!-- Footer -->
-        <footer style="text-align: center; padding: 2rem; color: var(--text-secondary); border-top: 1px solid var(--border-color);">
-            <p>
-                <span>&copy; 2024 HQMX. All Rights Reserved.</span>
-                <span class="footer-contact"> • support@hqmx.net</span>
-            </p>
-        </footer>
+    <footer>
+        <div class="footer-social">
+            <a href="https://x.com/8hqmx" target="_blank" rel="noopener noreferrer" class="footer-twitter"
+                aria-label="Follow us on X (Twitter)">
+                <img src="/downloader/assets/x-twitter-footer.svg" alt="X (Twitter)" class="footer-social-icon">
+            </a>
+        </div>
+        <p>
+            <span>&copy; 2024 HQMX. All Rights Reserved.</span>
+            <span class="footer-contact"> • support@hqmx.net</span>
+        </p>
+    </footer>
     </div>
 
     <script src="/script.js?v=20251114"></script>
