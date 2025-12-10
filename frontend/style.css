@@ -36,10 +36,6 @@ body[data-theme="dark"] {
     box-sizing: border-box;
 }
 
-html {
-    overflow-y: scroll;
-}
-
 body {
     font-family: 'Inter', sans-serif;
     background-color: var(--background-color);
@@ -103,12 +99,11 @@ body[data-theme="dark"]::before {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    /* Reduced from 2rem */
+    gap: 2rem;
     position: relative;
     z-index: 1;
-    padding: 0 2rem 2rem 2rem;
-    /* Removed top padding */
+    flex-grow: 1;
+    padding: 2rem;
     width: 100%;
 }
 
@@ -123,15 +118,14 @@ body[data-theme="dark"]::before {
     -webkit-backdrop-filter: blur(0px);
     position: sticky;
     top: 0;
-    z-index: 2000;
-    margin: 0 -2rem 0 -2rem;
-    /* Adjusted negative margins */
+    z-index: 1000;
+    margin: -2rem -2rem 2rem -2rem;
     border-bottom: none;
     transition: backdrop-filter 0.3s ease;
 }
 
 .nav-container {
-    max-width: 1100px;
+    max-width: 900px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -181,13 +175,9 @@ body[data-theme="dark"] .top-nav.scrolled {
 /* 데스크탑에서 네비게이션 메뉴 중앙 정렬 */
 @media (min-width: 1024px) {
     .nav-center {
-        /* position: absolute; removed to fix spacing issues */
-        /* left: 50%; removed */
-        /* transform: translateX(-50%); removed */
-        flex: 1;
-        /* Take available space */
-        justify-content: center;
-        /* Center content within available space */
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
     }
 }
 
@@ -875,13 +865,23 @@ body[data-theme="dark"] .language-selector-btn {
         opacity: 1 !important;
     }
 
-    .category-icons-nav.show,
-    .generator-links-nav.show,
-    .calculator-links-nav.show,
-    .platform-icons-nav.show {
+    .category-icons-nav.show {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
         gap: 1rem;
+        justify-items: center;
+        margin: 3rem auto;
+        /* Center the grid and provide margin */
+        width: 100%;
+        max-width: 400px;
+        /* Optional: Limit width for better appearance */
+    }
+
+    .platform-icons-nav.show {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 0.5rem;
+        /* Adjust gap as needed */
         justify-items: center;
         margin: 3rem auto;
         /* Center the grid and provide margin */
@@ -896,8 +896,8 @@ body[data-theme="dark"] .language-selector-btn {
 .header {
     text-align: center;
     position: relative;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
+    margin-bottom: 2rem;
+    margin-top: -2rem;
 }
 
 .tagline {
@@ -1187,7 +1187,6 @@ body[data-theme="dark"] .input-icon {
     /* Limit to 3 lines maximum to prevent excessive spacing */
     display: -webkit-box !important;
     -webkit-line-clamp: 3 !important;
-    line-clamp: 3 !important;
     /* autoprefixer: off */
     -webkit-box-orient: vertical !important;
     /* autoprefixer: on */
@@ -1675,9 +1674,7 @@ body[data-theme="dark"] .platform-item img[src*="tumblr"] {
 }
 
 .sitemap {
-    margin: 1rem auto 0 auto;
-    max-width: 1000px;
-    width: 100%;
+    margin-top: 60px;
     color: var(--light-text-color);
     padding: 3rem 0 8rem 0;
     /* Adjusted padding-bottom from 3rem to 8rem */
@@ -2108,11 +2105,11 @@ footer p {
     }
 
     .category-icons-nav {
-        margin-top: 1.5rem;
+        margin-top: 10rem;
     }
 
     .platform-icons-nav {
-        margin-top: 1.5rem;
+        margin-top: 10rem;
     }
 
     .platform-grid {
@@ -2150,11 +2147,11 @@ footer p {
     }
 
     .category-icons-nav {
-        margin-top: 1.5rem;
+        margin-top: 12rem;
     }
 
     .platform-icons-nav {
-        margin-top: 1.5rem;
+        margin-top: 12rem;
     }
 
     .platform-grid {
@@ -2694,948 +2691,702 @@ body[dir="rtl"] .guide-steps {
     height: 100%;
     object-fit: contain;
     transition: all 0.3s ease;
-}
 
-.platform-icon-btn:hover {
-    transform: translateY(-4px);
-    border-color: var(--primary-color);
-    box-shadow: 0 4px 12px rgba(var(--primary-color-rgb), 0.2);
-}
+    .platform-icon-btn:hover {
+        transform: translateY(-4px);
+        border-color: var(--primary-color);
+        box-shadow: 0 4px 12px rgba(var(--primary-color-rgb), 0.2);
+    }
 
-.platform-icon-btn i {
-    font-size: 2.2rem;
-    color: var(--text-color);
-    transition: all 0.3s ease;
-}
+    .platform-icon-btn i {
+        font-size: 2.2rem;
+        color: var(--text-color);
+        transition: all 0.3s ease;
+    }
 
-.platform-icon-btn:hover i {
-    color: var(--primary-color);
-    transform: scale(1.1);
-}
+    .platform-icon-btn:hover i {
+        color: var(--primary-color);
+        transform: scale(1.1);
+    }
 
-.platform-icon-btn.active {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    border-color: var(--primary-color);
-    box-shadow: 0 4px 16px rgba(var(--primary-color-rgb), 0.3);
-}
+    .platform-icon-btn.active {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        border-color: var(--primary-color);
+        box-shadow: 0 4px 16px rgba(var(--primary-color-rgb), 0.3);
+    }
 
-/* =========================================
+    /* =========================================
    Generator & Calculator Rainbow Styling
    ========================================= */
 
-/* --- GENERATOR COLORS --- */
-
-/* 1. QR Code - Blue */
-.generator-links-nav a:nth-child(1) .platform-icon-btn {
-    border-color: rgba(59, 130, 246, 0.3);
-}
-
-.generator-links-nav a:nth-child(1) .platform-icon-btn i {
-    color: #3B82F6;
-}
-
-.generator-links-nav a:nth-child(1) .platform-icon-btn:hover {
-    border-color: #3B82F6;
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
-}
-
-/* 2. Password - Green */
-.generator-links-nav a:nth-child(2) .platform-icon-btn {
-    border-color: rgba(16, 185, 129, 0.3);
-}
-
-.generator-links-nav a:nth-child(2) .platform-icon-btn i {
-    color: #10B981;
-}
-
-.generator-links-nav a:nth-child(2) .platform-icon-btn:hover {
-    border-color: #10B981;
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
-}
-
-/* 3. UUID - Purple */
-.generator-links-nav a:nth-child(3) .platform-icon-btn {
-    border-color: rgba(139, 92, 246, 0.3);
-}
-
-.generator-links-nav a:nth-child(3) .platform-icon-btn i {
-    color: #8B5CF6;
-}
-
-.generator-links-nav a:nth-child(3) .platform-icon-btn:hover {
-    border-color: #8B5CF6;
-    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
-}
-
-/* 4. Hash - Orange */
-.generator-links-nav a:nth-child(4) .platform-icon-btn {
-    border-color: rgba(245, 158, 11, 0.3);
-}
-
-.generator-links-nav a:nth-child(4) .platform-icon-btn i {
-    color: #F59E0B;
-}
-
-.generator-links-nav a:nth-child(4) .platform-icon-btn:hover {
-    border-color: #F59E0B;
-    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
-}
-
-/* 5. Barcode - Indigo */
-.generator-links-nav a:nth-child(5) .platform-icon-btn {
-    border-color: rgba(99, 102, 241, 0.3);
-}
-
-.generator-links-nav a:nth-child(5) .platform-icon-btn i {
-    color: #6366F1;
-}
-
-.generator-links-nav a:nth-child(5) .platform-icon-btn:hover {
-    border-color: #6366F1;
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
-}
-
-/* 6. Lorem Ipsum - Pink */
-.generator-links-nav a:nth-child(6) .platform-icon-btn {
-    border-color: rgba(236, 72, 153, 0.3);
-}
-
-.generator-links-nav a:nth-child(6) .platform-icon-btn i {
-    color: #EC4899;
-}
-
-.generator-links-nav a:nth-child(6) .platform-icon-btn:hover {
-    border-color: #EC4899;
-    box-shadow: 0 4px 12px rgba(236, 72, 153, 0.2);
-}
-
-/* 7. Word Counter - Red */
-.generator-links-nav a:nth-child(7) .platform-icon-btn {
-    border-color: rgba(239, 68, 68, 0.3);
-}
-
-.generator-links-nav a:nth-child(7) .platform-icon-btn i {
-    color: #EF4444;
-}
-
-.generator-links-nav a:nth-child(7) .platform-icon-btn:hover {
-    border-color: #EF4444;
-    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
-}
-
-/* 8. Color Picker - Cyan */
-.generator-links-nav a:nth-child(8) .platform-icon-btn {
-    border-color: rgba(6, 182, 212, 0.3);
-}
-
-.generator-links-nav a:nth-child(8) .platform-icon-btn i {
-    color: #06B6D4;
-}
-
-.generator-links-nav a:nth-child(8) .platform-icon-btn:hover {
-    border-color: #06B6D4;
-    box-shadow: 0 4px 12px rgba(6, 182, 212, 0.2);
-}
-
-
-/* --- CONVERTER CATEGORY COLORS (New) --- */
-
-/* Generic hover transform for all categories */
-.category-icon-btn:hover {
-    transform: translateY(-4px);
-}
-
-/* Cross-Category - Fire (Orange/Red) */
-.category-icon-btn[data-category="cross-category"] {
-    border-color: rgba(249, 115, 22, 0.3);
-}
-
-.category-icon-btn[data-category="cross-category"] i {
-    color: #F97316;
-}
-
-.category-icon-btn[data-category="cross-category"]:hover {
-    border-color: #F97316;
-    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.2);
-}
-
-/* Video - Blue */
-.category-icon-btn[data-category="video"] {
-    border-color: rgba(59, 130, 246, 0.3);
-}
-
-.category-icon-btn[data-category="video"] i {
-    color: #3B82F6;
-}
-
-.category-icon-btn[data-category="video"]:hover {
-    border-color: #3B82F6;
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
-}
-
-/* Image - Green */
-.category-icon-btn[data-category="image"] {
-    border-color: rgba(16, 185, 129, 0.3);
-}
-
-.category-icon-btn[data-category="image"] i {
-    color: #10B981;
-}
-
-.category-icon-btn[data-category="image"]:hover {
-    border-color: #10B981;
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
-}
-
-/* Audio - Pink/Purple */
-.category-icon-btn[data-category="audio"] {
-    border-color: rgba(236, 72, 153, 0.3);
-}
-
-.category-icon-btn[data-category="audio"] i {
-    color: #EC4899;
-}
-
-.category-icon-btn[data-category="audio"]:hover {
-    border-color: #EC4899;
-    box-shadow: 0 4px 12px rgba(236, 72, 153, 0.2);
-}
-
-/* Subtitle - Purple/Violet (New) */
-.category-icon-btn[data-category="subtitle"] {
-    border-color: rgba(139, 92, 246, 0.3);
-}
-
-.category-icon-btn[data-category="subtitle"] i {
-    color: #8B5CF6;
-}
-
-.category-icon-btn[data-category="subtitle"]:hover {
-    border-color: #8B5CF6;
-    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
-}
-
-/* Document - Yellow/Orange */
-.category-icon-btn[data-category="document"] {
-    border-color: rgba(234, 179, 8, 0.3);
-}
-
-.category-icon-btn[data-category="document"] i {
-    color: #EAB308;
-}
-
-.category-icon-btn[data-category="document"]:hover {
-    border-color: #EAB308;
-    box-shadow: 0 4px 12px rgba(234, 179, 8, 0.2);
-}
-
-/* Archive - Gray/Indigo */
-.category-icon-btn[data-category="archive"] {
-    border-color: rgba(99, 102, 241, 0.3);
-}
-
-.category-icon-btn[data-category="archive"] i {
-    color: #6366F1;
-}
-
-.category-icon-btn[data-category="archive"]:hover {
-    border-color: #6366F1;
-    box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
-}
-
-
-/* --- DOWNLOADER PLATFORM COLORS (New) --- */
-
-/* YouTube - Red */
-.platform-icon-btn[data-platform="youtube"] {
-    border-color: rgba(255, 0, 0, 0.3);
-}
-
-.platform-icon-btn[data-platform="youtube"]:hover {
-    border-color: #FF0000;
-    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.2);
-}
-
-/* Instagram - Gradient Pink/Orange (using solid fallback) */
-.platform-icon-btn[data-platform="instagram"] {
-    border-color: rgba(225, 48, 108, 0.3);
-}
-
-.platform-icon-btn[data-platform="instagram"]:hover {
-    border-color: #E1306C;
-    box-shadow: 0 4px 12px rgba(225, 48, 108, 0.2);
-}
-
-/* TikTok - Black/Cyan */
-.platform-icon-btn[data-platform="tiktok"] {
-    border-color: rgba(0, 0, 0, 0.3);
-}
-
-.platform-icon-btn[data-platform="tiktok"]:hover {
-    border-color: #000000;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-body[data-theme="dark"] .platform-icon-btn[data-platform="tiktok"] {
-    border-color: rgba(255, 255, 255, 0.3);
-}
-
-body[data-theme="dark"] .platform-icon-btn[data-platform="tiktok"]:hover {
-    border-color: #FFFFFF;
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
-}
-
-/* Facebook - Blue */
-.platform-icon-btn[data-platform="facebook"] {
-    border-color: rgba(24, 119, 242, 0.3);
-}
-
-.platform-icon-btn[data-platform="facebook"]:hover {
-    border-color: #1877F2;
-    box-shadow: 0 4px 12px rgba(24, 119, 242, 0.2);
-}
-
-/* Twitter - Black */
-.platform-icon-btn[data-platform="twitter"] {
-    border-color: rgba(0, 0, 0, 0.3);
-}
-
-.platform-icon-btn[data-platform="twitter"]:hover {
-    border-color: #000000;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-body[data-theme="dark"] .platform-icon-btn[data-platform="twitter"] {
-    border-color: rgba(255, 255, 255, 0.3);
-}
-
-body[data-theme="dark"] .platform-icon-btn[data-platform="twitter"]:hover {
-    border-color: #FFFFFF;
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
-}
-
-/* Reddit - Orange */
-.platform-icon-btn[data-platform="reddit"] {
-    border-color: rgba(255, 69, 0, 0.3);
-}
-
-.platform-icon-btn[data-platform="reddit"]:hover {
-    border-color: #FF4500;
-    box-shadow: 0 4px 12px rgba(255, 69, 0, 0.2);
-}
-
-/* Pinterest - Red */
-.platform-icon-btn[data-platform="pinterest"] {
-    border-color: rgba(230, 0, 35, 0.3);
-}
-
-.platform-icon-btn[data-platform="pinterest"]:hover {
-    border-color: #E60023;
-    box-shadow: 0 4px 12px rgba(230, 0, 35, 0.2);
-}
-
-/* SoundCloud - Orange */
-.platform-icon-btn[data-platform="soundcloud"] {
-    border-color: rgba(255, 85, 0, 0.3);
-}
-
-.platform-icon-btn[data-platform="soundcloud"]:hover {
-    border-color: #FF5500;
-    box-shadow: 0 4px 12px rgba(255, 85, 0, 0.2);
-}
-
-/* Dailymotion - Blue */
-.platform-icon-btn[data-platform="dailymotion"] {
-    border-color: rgba(0, 102, 220, 0.3);
-}
-
-.platform-icon-btn[data-platform="dailymotion"]:hover {
-    border-color: #0066DC;
-    box-shadow: 0 4px 12px rgba(0, 102, 220, 0.2);
-}
-
-/* Tumblr - Dark Blue */
-.platform-icon-btn[data-platform="tumblr"] {
-    border-color: rgba(54, 70, 93, 0.3);
-}
-
-.platform-icon-btn[data-platform="tumblr"]:hover {
-    border-color: #36465D;
-    box-shadow: 0 4px 12px rgba(54, 70, 93, 0.2);
-}
-
-body[data-theme="dark"] .platform-icon-btn[data-platform="tumblr"] {
-    border-color: rgba(255, 255, 255, 0.3);
-}
-
-body[data-theme="dark"] .platform-icon-btn[data-platform="tumblr"]:hover {
-    border-color: #FFFFFF;
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
-}
-
-
-/* --- UNIFIED BUTTON SIZES (50px) --- */
-.category-icon-btn,
-.platform-icon-btn {
-    width: 50px;
-    height: 50px;
-    padding: 10px;
-    /* Reduced to fit 50px */
-}
-
-.platform-icon-btn i {
-    font-size: 1.8rem;
-    /* Adjusted for 50px container */
-}
-
-/* Desktop layout for Downloader (10 items in 1 line) */
-@media (min-width: 1024px) {
-
-    .platform-icons-nav.show,
-    .calculator-links-nav.show,
-    .generator-links-nav.show {
+    /* --- GENERATOR COLORS --- */
+
+    /* 1. QR Code - Blue */
+    .generator-links-nav a:nth-child(1) .platform-icon-btn {
+        border-color: rgba(59, 130, 246, 0.3);
+    }
+
+    .generator-links-nav a:nth-child(1) .platform-icon-btn i {
+        color: #3B82F6;
+    }
+
+    .generator-links-nav a:nth-child(1) .platform-icon-btn:hover {
+        border-color: #3B82F6;
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+    }
+
+    /* 2. Password - Green */
+    .generator-links-nav a:nth-child(2) .platform-icon-btn {
+        border-color: rgba(16, 185, 129, 0.3);
+    }
+
+    .generator-links-nav a:nth-child(2) .platform-icon-btn i {
+        color: #10B981;
+    }
+
+    .generator-links-nav a:nth-child(2) .platform-icon-btn:hover {
+        border-color: #10B981;
+        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+    }
+
+    /* 3. UUID - Purple */
+    .generator-links-nav a:nth-child(3) .platform-icon-btn {
+        border-color: rgba(139, 92, 246, 0.3);
+    }
+
+    .generator-links-nav a:nth-child(3) .platform-icon-btn i {
+        color: #8B5CF6;
+    }
+
+    .generator-links-nav a:nth-child(3) .platform-icon-btn:hover {
+        border-color: #8B5CF6;
+        box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
+    }
+
+    /* 4. Hash - Orange */
+    .generator-links-nav a:nth-child(4) .platform-icon-btn {
+        border-color: rgba(245, 158, 11, 0.3);
+    }
+
+    .generator-links-nav a:nth-child(4) .platform-icon-btn i {
+        color: #F59E0B;
+    }
+
+    .generator-links-nav a:nth-child(4) .platform-icon-btn:hover {
+        border-color: #F59E0B;
+        box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+    }
+
+    /* 5. Barcode - Indigo */
+    .generator-links-nav a:nth-child(5) .platform-icon-btn {
+        border-color: rgba(99, 102, 241, 0.3);
+    }
+
+    .generator-links-nav a:nth-child(5) .platform-icon-btn i {
+        color: #6366F1;
+    }
+
+    .generator-links-nav a:nth-child(5) .platform-icon-btn:hover {
+        border-color: #6366F1;
+        box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+    }
+
+    /* 6. Lorem Ipsum - Pink */
+    .generator-links-nav a:nth-child(6) .platform-icon-btn {
+        border-color: rgba(236, 72, 153, 0.3);
+    }
+
+    .generator-links-nav a:nth-child(6) .platform-icon-btn i {
+        color: #EC4899;
+    }
+
+    .generator-links-nav a:nth-child(6) .platform-icon-btn:hover {
+        border-color: #EC4899;
+        box-shadow: 0 4px 12px rgba(236, 72, 153, 0.2);
+    }
+
+    /* 7. Word Counter - Red */
+    .generator-links-nav a:nth-child(7) .platform-icon-btn {
+        border-color: rgba(239, 68, 68, 0.3);
+    }
+
+    .generator-links-nav a:nth-child(7) .platform-icon-btn i {
+        color: #EF4444;
+    }
+
+    .generator-links-nav a:nth-child(7) .platform-icon-btn:hover {
+        border-color: #EF4444;
+        box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+    }
+
+    /* 8. Color Picker - Cyan */
+    .generator-links-nav a:nth-child(8) .platform-icon-btn {
+        border-color: rgba(6, 182, 212, 0.3);
+    }
+
+    .generator-links-nav a:nth-child(8) .platform-icon-btn i {
+        color: #06B6D4;
+    }
+
+    .generator-links-nav a:nth-child(8) .platform-icon-btn:hover {
+        border-color: #06B6D4;
+        box-shadow: 0 4px 12px rgba(6, 182, 212, 0.2);
+    }
+
+
+    /* --- CALCULATOR COLORS --- */
+
+    /* 1. BMI - Green (Health) */
+    .calculator-links-nav a:nth-child(1) .platform-icon-btn {
+        border-color: rgba(16, 185, 129, 0.3);
+    }
+
+    .calculator-links-nav a:nth-child(1) .platform-icon-btn i {
+        color: #10B981;
+    }
+
+    .calculator-links-nav a:nth-child(1) .platform-icon-btn:hover {
+        border-color: #10B981;
+        box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+    }
+
+    /* 2. Percentage - Blue (Math) */
+    .calculator-links-nav a:nth-child(2) .platform-icon-btn {
+        border-color: rgba(59, 130, 246, 0.3);
+    }
+
+    .calculator-links-nav a:nth-child(2) .platform-icon-btn i {
+        color: #3B82F6;
+    }
+
+    .calculator-links-nav a:nth-child(2) .platform-icon-btn:hover {
+        border-color: #3B82F6;
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+    }
+
+    /* 3. Age - Orange (Time) */
+    .calculator-links-nav a:nth-child(3) .platform-icon-btn {
+        border-color: rgba(245, 158, 11, 0.3);
+    }
+
+    .calculator-links-nav a:nth-child(3) .platform-icon-btn i {
+        color: #F59E0B;
+    }
+
+    .calculator-links-nav a:nth-child(3) .platform-icon-btn:hover {
+        border-color: #F59E0B;
+        box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
+    }
+
+    /* 4. Calorie - Red (Burn) */
+    .calculator-links-nav a:nth-child(4) .platform-icon-btn {
+        border-color: rgba(239, 68, 68, 0.3);
+    }
+
+    .calculator-links-nav a:nth-child(4) .platform-icon-btn i {
+        color: #EF4444;
+    }
+
+    .calculator-links-nav a:nth-child(4) .platform-icon-btn:hover {
+        border-color: #EF4444;
+        box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+    }
+
+    /* 5. Basic - Purple (General) */
+    .calculator-links-nav a:nth-child(5) .platform-icon-btn {
+        border-color: rgba(139, 92, 246, 0.3);
+    }
+
+    .calculator-links-nav a:nth-child(5) .platform-icon-btn i {
+        color: #8B5CF6;
+    }
+
+    .calculator-links-nav a:nth-child(5) .platform-icon-btn:hover {
+        border-color: #8B5CF6;
+        box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
+    }
+
+    /* 6. Date - Teal (Calendar) */
+    .calculator-links-nav a:nth-child(6) .platform-icon-btn {
+        border-color: rgba(20, 184, 166, 0.3);
+    }
+
+    .calculator-links-nav a:nth-child(6) .platform-icon-btn i {
+        color: #14B8A6;
+    }
+
+    .calculator-links-nav a:nth-child(6) .platform-icon-btn:hover {
+        border-color: #14B8A6;
+        box-shadow: 0 4px 12px rgba(20, 184, 166, 0.2);
+    }
+
+    .platform-icon-btn.active img {
+        filter: brightness(0) invert(1);
+    }
+
+    .platform-icon-btn.active i {
+        color: #ffffff !important;
+    }
+
+    /* Disabled state for platform icons */
+    .platform-icon-btn.disabled,
+    .platform-icon-btn:disabled {
+        opacity: 0.4;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+
+    .platform-icon-btn.disabled:hover,
+    .platform-icon-btn:disabled:hover {
+        transform: none;
+        border-color: var(--border-color);
+        box-shadow: none;
+    }
+
+    /* Dark mode support for platform icons */
+    body[data-theme="dark"] .platform-icon-btn img[src*="tiktok"],
+    body[data-theme="dark"] .platform-icon-btn img.x-icon,
+    body[data-theme="dark"] .platform-icon-btn img[src*="tumblr"] {
+        filter: invert(1);
+    }
+
+    body[data-theme="dark"] .platform-icon-btn.active img[src*="tiktok"],
+    body[data-theme="dark"] .platform-icon-btn.active img.x-icon,
+    body[data-theme="dark"] .platform-icon-btn.active img[src*="tumblr"] {
+        filter: brightness(0) invert(1);
+    }
+
+    .category-icon-btn {
+        width: 50px;
+        height: 50px;
+        border: 2px solid var(--border-color);
+        background: var(--card-bg);
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
         display: flex;
-        flex-wrap: nowrap;
+        align-items: center;
         justify-content: center;
-        gap: 1rem;
-        max-width: 100%;
-        margin: 3rem auto;
-    }
-}
-
-
-/* --- CALCULATOR COLORS --- */
-
-/* 1. BMI - Green (Health) */
-.calculator-links-nav a:nth-child(1) .platform-icon-btn {
-    border-color: rgba(16, 185, 129, 0.3);
-}
-
-.calculator-links-nav a:nth-child(1) .platform-icon-btn i {
-    color: #10B981;
-}
-
-.calculator-links-nav a:nth-child(1) .platform-icon-btn:hover {
-    border-color: #10B981;
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
-}
-
-/* 2. Percentage - Blue (Math) */
-.calculator-links-nav a:nth-child(2) .platform-icon-btn {
-    border-color: rgba(59, 130, 246, 0.3);
-}
-
-.calculator-links-nav a:nth-child(2) .platform-icon-btn i {
-    color: #3B82F6;
-}
-
-.calculator-links-nav a:nth-child(2) .platform-icon-btn:hover {
-    border-color: #3B82F6;
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
-}
-
-/* 3. Age - Orange (Time) */
-.calculator-links-nav a:nth-child(3) .platform-icon-btn {
-    border-color: rgba(245, 158, 11, 0.3);
-}
-
-.calculator-links-nav a:nth-child(3) .platform-icon-btn i {
-    color: #F59E0B;
-}
-
-.calculator-links-nav a:nth-child(3) .platform-icon-btn:hover {
-    border-color: #F59E0B;
-    box-shadow: 0 4px 12px rgba(245, 158, 11, 0.2);
-}
-
-/* 4. Calorie - Red (Burn) */
-.calculator-links-nav a:nth-child(4) .platform-icon-btn {
-    border-color: rgba(239, 68, 68, 0.3);
-}
-
-.calculator-links-nav a:nth-child(4) .platform-icon-btn i {
-    color: #EF4444;
-}
-
-.calculator-links-nav a:nth-child(4) .platform-icon-btn:hover {
-    border-color: #EF4444;
-    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
-}
-
-/* 5. Basic - Purple (General) */
-.calculator-links-nav a:nth-child(5) .platform-icon-btn {
-    border-color: rgba(139, 92, 246, 0.3);
-}
-
-.calculator-links-nav a:nth-child(5) .platform-icon-btn i {
-    color: #8B5CF6;
-}
-
-.calculator-links-nav a:nth-child(5) .platform-icon-btn:hover {
-    border-color: #8B5CF6;
-    box-shadow: 0 4px 12px rgba(139, 92, 246, 0.2);
-}
-
-/* 6. Date - Teal (Calendar) */
-.calculator-links-nav a:nth-child(6) .platform-icon-btn {
-    border-color: rgba(20, 184, 166, 0.3);
-}
-
-.calculator-links-nav a:nth-child(6) .platform-icon-btn i {
-    color: #14B8A6;
-}
-
-.calculator-links-nav a:nth-child(6) .platform-icon-btn:hover {
-    border-color: #14B8A6;
-    box-shadow: 0 4px 12px rgba(20, 184, 166, 0.2);
-}
-
-.platform-icon-btn.active img {
-    filter: brightness(0) invert(1);
-}
-
-.platform-icon-btn.active i {
-    color: #ffffff !important;
-}
-
-/* Calculator Category Colors (similar to Converter) */
-/* 1. BMI - Green */
-.calculator-badges-section .conversion-category[data-category="bmi"] .conversion-badge {
-    background-color: rgba(16, 185, 129, 0.15);
-    color: #10B981;
-}
-
-/* 2. Percentage - Blue */
-.calculator-badges-section .conversion-category[data-category="percentage"] .conversion-badge {
-    background-color: rgba(59, 130, 246, 0.15);
-    color: #3B82F6;
-}
-
-/* 3. Age - Orange */
-.calculator-badges-section .conversion-category[data-category="age"] .conversion-badge {
-    background-color: rgba(245, 158, 11, 0.15);
-    color: #F59E0B;
-}
-
-/* 4. Calorie - Red */
-.calculator-badges-section .conversion-category[data-category="calorie"] .conversion-badge {
-    background-color: rgba(239, 68, 68, 0.15);
-    color: #EF4444;
-}
-
-/* 5. Basic - Purple */
-.calculator-badges-section .conversion-category[data-category="basic"] .conversion-badge {
-    background-color: rgba(139, 92, 246, 0.15);
-    color: #8B5CF6;
-}
-
-/* 6. Date - Teal */
-.calculator-badges-section .conversion-category[data-category="date"] .conversion-badge {
-    background-color: rgba(20, 184, 166, 0.15);
-    color: #14B8A6;
-}
-
-/* Dark mode calculator colors */
-body[data-theme="dark"] .calculator-badges-section .conversion-category[data-category="bmi"] .conversion-badge {
-    background-color: rgba(110, 231, 183, 0.15);
-    color: #6EE7B7;
-}
-
-body[data-theme="dark"] .calculator-badges-section .conversion-category[data-category="percentage"] .conversion-badge {
-    background-color: rgba(147, 197, 253, 0.15);
-    color: #93C5FD;
-}
-
-body[data-theme="dark"] .calculator-badges-section .conversion-category[data-category="age"] .conversion-badge {
-    background-color: rgba(252, 211, 77, 0.15);
-    color: #FCD34D;
-}
-
-body[data-theme="dark"] .calculator-badges-section .conversion-category[data-category="calorie"] .conversion-badge {
-    background-color: rgba(248, 113, 113, 0.15);
-    color: #F87171;
-}
-
-body[data-theme="dark"] .calculator-badges-section .conversion-category[data-category="basic"] .conversion-badge {
-    background-color: rgba(192, 132, 252, 0.15);
-    color: #C084FC;
-}
-
-body[data-theme="dark"] .calculator-badges-section .conversion-category[data-category="date"] .conversion-badge {
-    background-color: rgba(45, 212, 191, 0.15);
-    color: #2DD4BF;
-}
-
-/* Disabled state for platform icons */
-.platform-icon-btn.disabled,
-.platform-icon-btn:disabled {
-    opacity: 0.4;
-    cursor: not-allowed;
-    pointer-events: none;
-}
-
-.platform-icon-btn.disabled:hover,
-.platform-icon-btn:disabled:hover {
-    transform: none;
-    border-color: var(--border-color);
-    box-shadow: none;
-}
-
-/* Dark mode support for platform icons */
-body[data-theme="dark"] .platform-icon-btn img[src*="tiktok"],
-body[data-theme="dark"] .platform-icon-btn img.x-icon,
-body[data-theme="dark"] .platform-icon-btn img[src*="tumblr"] {
-    filter: invert(1);
-}
-
-body[data-theme="dark"] .platform-icon-btn.active img[src*="tiktok"],
-body[data-theme="dark"] .platform-icon-btn.active img.x-icon,
-body[data-theme="dark"] .platform-icon-btn.active img[src*="tumblr"] {
-    filter: brightness(0) invert(1);
-}
-
-.category-icon-btn {
-    width: 50px;
-    height: 50px;
-    border: 2px solid var(--border-color);
-    background: var(--card-bg);
-    border-radius: 12px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.category-icon-btn i {
-    font-size: 1.5rem;
-    color: var(--text-secondary);
-    transition: all 0.3s ease;
-}
-
-/* Remove generic hover - let specific colors handle it */
-.category-icon-btn.active {
-    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-    border-color: var(--primary-color);
-    box-shadow: 0 4px 16px rgba(var(--primary-color-rgb), 0.3);
-}
-
-.category-icon-btn.active i {
-    color: white;
-}
-
-
-
-/* Conversion Category */
-.conversion-category {
-    display: none;
-}
-
-.conversion-category.active {
-    display: block;
-}
-
-/* Conversion Badges Container */
-.conversion-badges-container {
-    padding: 0 1.5rem 1.5rem 1.5rem;
-}
-
-/* Conversion Subcategory */
-.conversion-subcategory {
-    margin-bottom: 2rem;
-    position: relative;
-}
-
-.conversion-subcategory:last-child {
-    margin-bottom: 0;
-}
-
-/* Show More Button */
-.show-more-conversions-btn {
-    display: block;
-    width: 32px;
-    height: 32px;
-    border: 2px solid var(--primary-color);
-    background: transparent;
-    color: var(--primary-color);
-    border-radius: 50%;
-    cursor: pointer;
-    margin: 1rem auto 0;
-    transition: all 0.3s ease;
-    font-size: 14px;
-    font-weight: bold;
-}
-
-.show-more-conversions-btn:hover {
-    background: var(--primary-color);
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
-}
-
-.show-more-conversions-btn.expanded {
-    transform: rotate(45deg);
-}
-
-.show-more-conversions-btn.expanded:hover {
-    transform: rotate(45deg) translateY(-2px);
-}
-
-.conversion-subcategory h5 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--text-color);
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-}
-
-.conversion-subcategory h5 i {
-    color: var(--primary-color);
-}
-
-/* Conversion Badges Grid */
-.conversion-badges,
-.calculator-badges-section .conversion-badges {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    /* 모바일: 3열 */
-    gap: 0.5rem;
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
-}
-
-/* 768px 이상(태블릿)에서 뱃지 6열 */
-@media (min-width: 768px) {
-
-    .conversion-badges,
-    .calculator-badges-section .conversion-badges {
-        grid-template-columns: repeat(6, 1fr);
-    }
-}
-
-/* 1024px 이상(데스크톱)에서 뱃지 8열 */
-@media (min-width: 1024px) {
-
-    .conversion-badges,
-    .calculator-badges-section .conversion-badges {
-        grid-template-columns: repeat(8, 1fr);
-    }
-}
-
-/* Conversion Badge (Supported Format Style) */
-.conversion-badge {
-    position: relative;
-    height: 32px;
-    text-decoration: none;
-    display: block;
-    border-radius: 8px;
-    font-size: 0.7rem;
-    font-weight: 600;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
-    overflow: hidden;
-    white-space: nowrap;
-    min-width: 0;
-    box-sizing: border-box;
-}
-
-/* Hidden badges (for show more functionality) */
-.conversion-badge.hidden {
-    display: none;
-}
-
-.conversion-badge:hover {
-    transform: translateY(-2px);
-}
-
-.badge-front,
-.badge-back {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    letter-spacing: 0.05em;
-    word-spacing: 0.2em;
-}
-
-.badge-front {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-.badge-back {
-    opacity: 0;
-    transform: translateX(100%);
-}
-
-.conversion-badge:hover .badge-front {
-    opacity: 0;
-    transform: translateX(-100%);
-}
-
-.conversion-badge:hover .badge-back {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-/* 단방향 변환 뱃지 - 회전 애니메이션 제거 */
-.conversion-badge.unidirectional:hover {
-    transform: translateY(-2px);
-    /* 살짝 올라가는 효과만 유지 */
-}
-
-.conversion-badge.unidirectional:hover .badge-front {
-    opacity: 1;
-    /* 앞면 유지 */
-    transform: translateX(0);
-    /* 좌우 이동 제거 */
-}
-
-.conversion-badge.unidirectional:hover .badge-back {
-    opacity: 0;
-    /* 뒷면 숨김 */
-    transform: translateX(100%);
-    /* 원래 위치 유지 */
-}
-
-/* 카테고리별 뱃지 색상 (라이트 모드) */
-/* Cross-Category - Red/Fire */
-.conversion-category[data-category="cross-category"] .conversion-badge {
-    background-color: rgba(239, 68, 68, 0.15);
-    color: #EF4444;
-}
-
-/* Video - Blue */
-.conversion-category[data-category="video"] .conversion-badge {
-    background-color: rgba(59, 130, 246, 0.15);
-    color: #3B82F6;
-}
-
-/* Image - Green */
-.conversion-category[data-category="image"] .conversion-badge {
-    background-color: rgba(16, 185, 129, 0.15);
-    color: #10B981;
-}
-
-/* Audio - Pink */
-.conversion-category[data-category="audio"] .conversion-badge {
-    background-color: rgba(236, 72, 153, 0.15);
-    color: #EC4899;
-}
-
-/* Document - Orange */
-.conversion-category[data-category="document"] .conversion-badge {
-    background-color: rgba(245, 158, 11, 0.15);
-    color: #F59E0B;
-}
-
-/* Archive - Purple */
-.conversion-category[data-category="archive"] .conversion-badge {
-    background-color: rgba(168, 85, 247, 0.15);
-    color: #A855F7;
-}
-
-/* Subtitle - Violet (New) */
-.conversion-category[data-category="subtitle"] .conversion-badge {
-    background-color: rgba(139, 92, 246, 0.15);
-    color: #8B5CF6;
-}
-
-/* 카테고리별 뱃지 색상 (다크 모드) */
-body[data-theme="dark"] .conversion-category[data-category="cross-category"] .conversion-badge {
-    background-color: rgba(248, 113, 113, 0.15);
-    color: #F87171;
-}
-
-body[data-theme="dark"] .conversion-category[data-category="video"] .conversion-badge {
-    background-color: rgba(147, 197, 253, 0.15);
-    color: #93C5FD;
-}
-
-body[data-theme="dark"] .conversion-category[data-category="image"] .conversion-badge {
-    background-color: rgba(110, 231, 183, 0.15);
-    color: #6EE7B7;
-}
-
-body[data-theme="dark"] .conversion-category[data-category="audio"] .conversion-badge {
-    background-color: rgba(249, 168, 212, 0.15);
-    color: #F9A8D4;
-}
-
-body[data-theme="dark"] .conversion-category[data-category="document"] .conversion-badge {
-    background-color: rgba(252, 211, 77, 0.15);
-    color: #FCD34D;
-}
-
-body[data-theme="dark"] .conversion-category[data-category="archive"] .conversion-badge {
-    background-color: rgba(192, 132, 252, 0.15);
-    color: #C084FC;
-}
-
-body[data-theme="dark"] .conversion-category[data-category="subtitle"] .conversion-badge {
-    background-color: rgba(167, 139, 250, 0.15);
-    color: #A78BFA;
-}
-
-/* Mobile Responsiveness */
-@media (max-width: 768px) {
-    .supported-conversions {
-        padding: 1.5rem;
     }
 
-    .supported-conversions h3 {
+    .category-icon-btn i {
         font-size: 1.5rem;
+        color: var(--text-secondary);
+        transition: all 0.3s ease;
     }
 
-    .category-header {
-        padding: 1rem;
+    .category-icon-btn:hover {
+        transform: translateY(-4px);
+        border-color: var(--primary-color);
+        box-shadow: 0 4px 12px rgba(var(--primary-color-rgb), 0.2);
     }
 
-    .category-header h4 {
-        font-size: 1rem;
+    .category-icon-btn:hover i {
+        color: var(--primary-color);
     }
 
-    .badge-count {
-        font-size: 0.65rem;
-        padding: 0.2rem 0.5rem;
+    .category-icon-btn.active {
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        border-color: var(--primary-color);
+        box-shadow: 0 4px 16px rgba(var(--primary-color-rgb), 0.3);
     }
 
-    .conversion-badges {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.4rem;
-        width: 100%;
-        max-width: 100%;
-        box-sizing: border-box;
+    .category-icon-btn.active i {
+        color: white;
     }
 
-    .conversion-badge {
-        height: 36px;
-        font-size: 0.7rem;
+    /* 카테고리별 아이콘 색상 (라이트 모드) */
+    .category-icon-btn[data-category="cross-category"]:not(.active) {
+        border-color: rgba(239, 68, 68, 0.3);
+    }
+
+    .category-icon-btn[data-category="cross-category"]:not(.active) i {
+        color: #EF4444;
+    }
+
+    .category-icon-btn[data-category="video"]:not(.active) {
+        border-color: rgba(59, 130, 246, 0.3);
+    }
+
+    .category-icon-btn[data-category="video"]:not(.active) i {
+        color: #3B82F6;
+    }
+
+    .category-icon-btn[data-category="image"]:not(.active) {
+        border-color: rgba(16, 185, 129, 0.3);
+    }
+
+    .category-icon-btn[data-category="image"]:not(.active) i {
+        color: #10B981;
+    }
+
+    .category-icon-btn[data-category="audio"]:not(.active) {
+        border-color: rgba(236, 72, 153, 0.3);
+    }
+
+    .category-icon-btn[data-category="audio"]:not(.active) i {
+        color: #EC4899;
+    }
+
+    .category-icon-btn[data-category="document"]:not(.active) {
+        border-color: rgba(245, 158, 11, 0.3);
+    }
+
+    .category-icon-btn[data-category="document"]:not(.active) i {
+        color: #F59E0B;
+    }
+
+    .category-icon-btn[data-category="archive"]:not(.active) {
+        border-color: rgba(168, 85, 247, 0.3);
+    }
+
+    .category-icon-btn[data-category="archive"]:not(.active) i {
+        color: #A855F7;
+    }
+
+    /* 카테고리별 아이콘 색상 (다크 모드) */
+    body[data-theme="dark"] .category-icon-btn[data-category="cross-category"]:not(.active) {
+        border-color: rgba(248, 113, 113, 0.3);
+    }
+
+    body[data-theme="dark"] .category-icon-btn[data-category="cross-category"]:not(.active) i {
+        color: #F87171;
+    }
+
+    body[data-theme="dark"] .category-icon-btn[data-category="video"]:not(.active) {
+        border-color: rgba(147, 197, 253, 0.3);
+    }
+
+    body[data-theme="dark"] .category-icon-btn[data-category="video"]:not(.active) i {
+        color: #93C5FD;
+    }
+
+    body[data-theme="dark"] .category-icon-btn[data-category="image"]:not(.active) {
+        border-color: rgba(110, 231, 183, 0.3);
+    }
+
+    body[data-theme="dark"] .category-icon-btn[data-category="image"]:not(.active) i {
+        color: #6EE7B7;
+    }
+
+    body[data-theme="dark"] .category-icon-btn[data-category="audio"]:not(.active) {
+        border-color: rgba(249, 168, 212, 0.3);
+    }
+
+    body[data-theme="dark"] .category-icon-btn[data-category="audio"]:not(.active) i {
+        color: #F9A8D4;
+    }
+
+    body[data-theme="dark"] .category-icon-btn[data-category="document"]:not(.active) {
+        border-color: rgba(252, 211, 77, 0.3);
+    }
+
+    body[data-theme="dark"] .category-icon-btn[data-category="document"]:not(.active) i {
+        color: #FCD34D;
+    }
+
+    body[data-theme="dark"] .category-icon-btn[data-category="archive"]:not(.active) {
+        border-color: rgba(192, 132, 252, 0.3);
+    }
+
+    body[data-theme="dark"] .category-icon-btn[data-category="archive"]:not(.active) i {
+        color: #C084FC;
+    }
+
+    /* Conversion Category */
+    .conversion-category {
+        display: none;
+    }
+
+    .conversion-category.active {
+        display: block;
+    }
+
+    /* Conversion Badges Container */
+    .conversion-badges-container {
+        padding: 0 1.5rem 1.5rem 1.5rem;
+    }
+
+    /* Conversion Subcategory */
+    .conversion-subcategory {
+        margin-bottom: 2rem;
+        position: relative;
+    }
+
+    .conversion-subcategory:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Show More Button */
+    .show-more-conversions-btn {
+        display: block;
+        width: 32px;
+        height: 32px;
+        border: 2px solid var(--primary-color);
+        background: transparent;
+        color: var(--primary-color);
+        border-radius: 50%;
+        cursor: pointer;
+        margin: 1rem auto 0;
+        transition: all 0.3s ease;
+        font-size: 14px;
+        font-weight: bold;
+    }
+
+    .show-more-conversions-btn:hover {
+        background: var(--primary-color);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    }
+
+    .show-more-conversions-btn.expanded {
+        transform: rotate(45deg);
+    }
+
+    .show-more-conversions-btn.expanded:hover {
+        transform: rotate(45deg) translateY(-2px);
     }
 
     .conversion-subcategory h5 {
-        font-size: 1rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--text-color);
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
     }
-}
 
-/* 480px 이하 모바일 - 3열 유지 */
-@media (max-width: 480px) {
+    .conversion-subcategory h5 i {
+        color: var(--primary-color);
+    }
+
+    /* Conversion Badges Grid */
     .conversion-badges {
+        display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 0.35rem;
+        /* 모바일: 3열 */
+        gap: 0.5rem;
         width: 100%;
         max-width: 100%;
         box-sizing: border-box;
     }
 
-    .conversion-badge {
-        height: 32px;
-        font-size: 0.65rem;
+    /* 768px 이상(태블릿)에서 뱃지 6열 */
+    @media (min-width: 768px) {
+        .conversion-badges {
+            grid-template-columns: repeat(6, 1fr);
+        }
     }
 
-}
+    /* 1024px 이상(데스크톱)에서 뱃지 8열 */
+    @media (min-width: 1024px) {
+        .conversion-badges {
+            grid-template-columns: repeat(8, 1fr);
+        }
+    }
+
+    /* Conversion Badge (Supported Format Style) */
+    .conversion-badge {
+        position: relative;
+        height: 32px;
+        text-decoration: none;
+        display: block;
+        border-radius: 8px;
+        font-size: 0.7rem;
+        font-weight: 600;
+        transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+        overflow: hidden;
+        white-space: nowrap;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    /* Hidden badges (for show more functionality) */
+    .conversion-badge.hidden {
+        display: none;
+    }
+
+    .conversion-badge:hover {
+        transform: translateY(-2px);
+    }
+
+    .badge-front,
+    .badge-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        letter-spacing: 0.05em;
+        word-spacing: 0.2em;
+    }
+
+    .badge-front {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .badge-back {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    .conversion-badge:hover .badge-front {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    .conversion-badge:hover .badge-back {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    /* 단방향 변환 뱃지 - 회전 애니메이션 제거 */
+    .conversion-badge.unidirectional:hover {
+        transform: translateY(-2px);
+        /* 살짝 올라가는 효과만 유지 */
+    }
+
+    .conversion-badge.unidirectional:hover .badge-front {
+        opacity: 1;
+        /* 앞면 유지 */
+        transform: translateX(0);
+        /* 좌우 이동 제거 */
+    }
+
+    .conversion-badge.unidirectional:hover .badge-back {
+        opacity: 0;
+        /* 뒷면 숨김 */
+        transform: translateX(100%);
+        /* 원래 위치 유지 */
+    }
+
+    /* 카테고리별 뱃지 색상 (라이트 모드) */
+    /* Cross-Category - Red/Fire */
+    .conversion-category[data-category="cross-category"] .conversion-badge {
+        background-color: rgba(239, 68, 68, 0.15);
+        color: #EF4444;
+    }
+
+    /* Video - Blue */
+    .conversion-category[data-category="video"] .conversion-badge {
+        background-color: rgba(59, 130, 246, 0.15);
+        color: #3B82F6;
+    }
+
+    /* Image - Green */
+    .conversion-category[data-category="image"] .conversion-badge {
+        background-color: rgba(16, 185, 129, 0.15);
+        color: #10B981;
+    }
+
+    /* Audio - Pink */
+    .conversion-category[data-category="audio"] .conversion-badge {
+        background-color: rgba(236, 72, 153, 0.15);
+        color: #EC4899;
+    }
+
+    /* Document - Orange */
+    .conversion-category[data-category="document"] .conversion-badge {
+        background-color: rgba(245, 158, 11, 0.15);
+        color: #F59E0B;
+    }
+
+    /* Archive - Purple */
+    .conversion-category[data-category="archive"] .conversion-badge {
+        background-color: rgba(168, 85, 247, 0.15);
+        color: #A855F7;
+    }
+
+    /* 카테고리별 뱃지 색상 (다크 모드) */
+    body[data-theme="dark"] .conversion-category[data-category="cross-category"] .conversion-badge {
+        background-color: rgba(248, 113, 113, 0.15);
+        color: #F87171;
+    }
+
+    body[data-theme="dark"] .conversion-category[data-category="video"] .conversion-badge {
+        background-color: rgba(147, 197, 253, 0.15);
+        color: #93C5FD;
+    }
+
+    body[data-theme="dark"] .conversion-category[data-category="image"] .conversion-badge {
+        background-color: rgba(110, 231, 183, 0.15);
+        color: #6EE7B7;
+    }
+
+    body[data-theme="dark"] .conversion-category[data-category="audio"] .conversion-badge {
+        background-color: rgba(249, 168, 212, 0.15);
+        color: #F9A8D4;
+    }
+
+    body[data-theme="dark"] .conversion-category[data-category="document"] .conversion-badge {
+        background-color: rgba(252, 211, 77, 0.15);
+        color: #FCD34D;
+    }
+
+    body[data-theme="dark"] .conversion-category[data-category="archive"] .conversion-badge {
+        background-color: rgba(192, 132, 252, 0.15);
+        color: #C084FC;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+        .supported-conversions {
+            padding: 1.5rem;
+        }
+
+        .supported-conversions h3 {
+            font-size: 1.5rem;
+        }
+
+        .category-header {
+            padding: 1rem;
+        }
+
+        .category-header h4 {
+            font-size: 1rem;
+        }
+
+        .badge-count {
+            font-size: 0.65rem;
+            padding: 0.2rem 0.5rem;
+        }
+
+        .conversion-badges {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.4rem;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .conversion-badge {
+            height: 36px;
+            font-size: 0.7rem;
+        }
+
+        .conversion-subcategory h5 {
+            font-size: 1rem;
+        }
+    }
+
+    /* 480px 이하 모바일 - 3열 유지 */
+    @media (max-width: 480px) {
+        .conversion-badges {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.35rem;
+            width: 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+
+        .conversion-badge {
+            height: 32px;
+            font-size: 0.65rem;
+        }
+
+    }
